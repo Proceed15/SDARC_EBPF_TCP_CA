@@ -1,0 +1,69 @@
+jrlsf@Artemis1915:~/labs-ebpf$ cd tcp_atv_obs
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ dotnet new console --force
+The template "Console App" was created successfully.
+
+Processing post-creation actions...
+Restoring /home/jrlsf/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj:
+  Determining projects to restore...
+  Restored /home/jrlsf/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj (in 165 ms).
+Restore succeeded.
+
+
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ rm -rf TcpCongestionObservatory
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ cd TcpCongestionObservatory
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ rm -rf TcpCongestionObservatory
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ dotnet new console
+The template "Console App" was created successfully.
+
+Processing post-creation actions...
+Restoring /home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/TcpCongestionObservatory.csproj:
+  Determining projects to restore...
+  Restored /home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/TcpCongestionObservatory.csproj (in 181 ms).
+Restore succeeded.
+
+
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+[sudo] password for jrlsf: 
+Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...
+------------------------------------------------------
+Mapa carregado com sucesso (FD: 37).
+Aguardando tráfego TCP (ex: iperf3) para exibir os dados...
+------------------------------------------------------
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+[sudo] password for jrlsf: 
+Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...
+------------------------------------------------------
+Mapa carregado com sucesso (FD: 37).
+Aguardando tráfego TCP (ex: iperf3) para exibir os dados...
+------------------------------------------------------
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...
+------------------------------------------------------
+Mapa carregado com sucesso (FD: 37).
+Aguardando tráfego TCP (ex: iperf3) para exibir os dados...
+------------------------------------------------------
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...
+------------------------------------------------------
+Mapa carregado com sucesso (FD: 37).
+Aguardando tráfego TCP (ex: iperf3) para exibir os dados...
+------------------------------------------------------
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...
+------------------------------------------------------
+Mapa carregado com sucesso (FD: 37).
+Aguardando tráfego TCP (ex: iperf3) para exibir os dados...
+------------------------------------------------------
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...
+------------------------------------------------------
+Mapa carregado com sucesso (FD: 37).
+Aguardando tráfego TCP (ex: iperf3) para exibir os dados...
+------------------------------------------------------
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...
+------------------------------------------------------
+Mapa carregado com sucesso (FD: 37).
+Aguardando tráfego TCP (ex: iperf3) para exibir os dados...
+------------------------------------------------------
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ 

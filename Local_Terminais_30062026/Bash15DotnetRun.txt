@@ -1,0 +1,230 @@
+Usuário@Artemis1915:~/labs-ebpf$ cd tcp_atv_obs
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo dotnet run
+[sudo] password for Usuário: 
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+
+The build failed. Fix the build errors and run again.
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ dotnet build
+MSBuild version 17.8.49+7806cbf7b for .NET
+  Determining projects to restore...
+  Restored /home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj (in 616 ms).
+  Unable to use package assets cache due to I/O error. This can occur when the same project is built more than once in parallel. Performance may be degraded, but the build result will not be impacted.
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+
+Build FAILED.
+
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+    0 Warning(s)
+    8 Error(s)
+
+Time Elapsed 00:00:03.14
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ dotnet clean && rm -rf bin/ obj/ && dotnet build
+MSBuild version 17.8.49+7806cbf7b for .NET
+Build started 06/30/2026 17:34:11.
+     1>Project "/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj" on node 1 (Clean target(s)).
+     1>CoreClean:
+         Deleting file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.GeneratedMSBuildEditorConfig.editorconfig".
+     1>/usr/lib/dotnet/sdk/8.0.128/Microsoft.Common.CurrentVersion.targets(5700,5): warning MSB3061: Unable to delete file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.GeneratedMSBuildEditorConfig.editorconfig". Access to the path '/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.GeneratedMSBuildEditorConfig.editorconfig' is denied. [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+         Deleting file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfoInputs.cache".
+     1>/usr/lib/dotnet/sdk/8.0.128/Microsoft.Common.CurrentVersion.targets(5700,5): warning MSB3061: Unable to delete file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfoInputs.cache". Access to the path '/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfoInputs.cache' is denied. [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+         Deleting file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs".
+     1>/usr/lib/dotnet/sdk/8.0.128/Microsoft.Common.CurrentVersion.targets(5700,5): warning MSB3061: Unable to delete file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs". Access to the path '/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs' is denied. [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+         Deleting file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.csproj.CoreCompileInputs.cache".
+     1>/usr/lib/dotnet/sdk/8.0.128/Microsoft.Common.CurrentVersion.targets(5700,5): warning MSB3061: Unable to delete file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.csproj.CoreCompileInputs.cache". Access to the path '/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.csproj.CoreCompileInputs.cache' is denied. [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+       ResolvePackageAssets:
+         Unable to use package assets cache due to I/O error. This can occur when the same project is built more than once in parallel. Performance may be degraded, but the build result will not be impacted.
+     1>Done Building Project "/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj" (Clean target(s)).
+
+Build succeeded.
+
+       "/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj" (Clean target) (1) ->
+       (CoreClean target) -> 
+         /usr/lib/dotnet/sdk/8.0.128/Microsoft.Common.CurrentVersion.targets(5700,5): warning MSB3061: Unable to delete file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.GeneratedMSBuildEditorConfig.editorconfig". Access to the path '/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.GeneratedMSBuildEditorConfig.editorconfig' is denied. [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+         /usr/lib/dotnet/sdk/8.0.128/Microsoft.Common.CurrentVersion.targets(5700,5): warning MSB3061: Unable to delete file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfoInputs.cache". Access to the path '/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfoInputs.cache' is denied. [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+         /usr/lib/dotnet/sdk/8.0.128/Microsoft.Common.CurrentVersion.targets(5700,5): warning MSB3061: Unable to delete file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs". Access to the path '/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs' is denied. [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+         /usr/lib/dotnet/sdk/8.0.128/Microsoft.Common.CurrentVersion.targets(5700,5): warning MSB3061: Unable to delete file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.csproj.CoreCompileInputs.cache". Access to the path '/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.csproj.CoreCompileInputs.cache' is denied. [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+
+    4 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.59
+rm: cannot remove 'bin/Debug/net8.0': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/refint': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/tcp_atv_obs.csproj.FileListAbsolute.txt': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/tcp_atv_obs.assets.cache': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/ref': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/tcp_atv_obs.GlobalUsings.g.cs': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/tcp_atv_obs.GeneratedMSBuildEditorConfig.editorconfig': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/tcp_atv_obs.csproj.CoreCompileInputs.cache': Permission denied
+rm: cannot remove 'obj/Debug/net8.0/tcp_atv_obs.AssemblyInfoInputs.cache': Permission denied
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo rm -rf bin/ obj/
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ dotnet clean && rm -rf bin/ obj/ && dotnet build
+MSBuild version 17.8.49+7806cbf7b for .NET
+Build started 06/30/2026 17:35:27.
+     1>Project "/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj" on node 1 (Clean target(s)).
+     1>CoreClean:
+         Creating directory "obj/Debug/net8.0/".
+     1>Done Building Project "/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj" (Clean target(s)).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.42
+MSBuild version 17.8.49+7806cbf7b for .NET
+  Determining projects to restore...
+  Restored /home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj (in 217 ms).
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+
+Build FAILED.
+
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+    0 Warning(s)
+    8 Error(s)
+
+Time Elapsed 00:00:01.56
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo dotnet clean && rm -rf bin/ obj/ && dotnet build
+MSBuild version 17.8.49+7806cbf7b for .NET
+Build started 06/30/2026 17:35:41.
+     1>Project "/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj" on node 1 (Clean target(s)).
+     1>CoreClean:
+         Deleting file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.GeneratedMSBuildEditorConfig.editorconfig".
+         Deleting file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfoInputs.cache".
+         Deleting file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs".
+         Deleting file "/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.csproj.CoreCompileInputs.cache".
+     1>Done Building Project "/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj" (Clean target(s)).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.49
+MSBuild version 17.8.49+7806cbf7b for .NET
+  Determining projects to restore...
+  Restored /home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj (in 168 ms).
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+
+Build FAILED.
+
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+    0 Warning(s)
+    8 Error(s)
+
+Time Elapsed 00:00:01.15
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo rm -rf bin/ obj/
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ dotnet build
+MSBuild version 17.8.49+7806cbf7b for .NET
+  Determining projects to restore...
+  Restored /home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj (in 176 ms).
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+
+Build FAILED.
+
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+    0 Warning(s)
+    8 Error(s)
+
+Time Elapsed 00:00:01.20
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo dotnet run
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs(4,12): error CS0579: Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(13,12): error CS0579: Duplicate 'System.Reflection.AssemblyCompanyAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(14,12): error CS0579: Duplicate 'System.Reflection.AssemblyConfigurationAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(15,12): error CS0579: Duplicate 'System.Reflection.AssemblyFileVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(16,12): error CS0579: Duplicate 'System.Reflection.AssemblyInformationalVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(17,12): error CS0579: Duplicate 'System.Reflection.AssemblyProductAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(18,12): error CS0579: Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+/home/Usuário/labs-ebpf/tcp_atv_obs/obj/Debug/net8.0/tcp_atv_obs.AssemblyInfo.cs(19,12): error CS0579: Duplicate 'System.Reflection.AssemblyVersionAttribute' attribute [/home/Usuário/labs-ebpf/tcp_atv_obs/tcp_atv_obs.csproj]
+
+The build failed. Fix the build errors and run again.
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs$ cd TcpCongestionObservatory
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo rm -rf obj bin tcp_atv_obs.csproj Program.cs
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+CSC : error CS5001: Program does not contain a static 'Main' method suitable for an entry point [/home/Usuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/TcpCongestionObservatory.csproj]
+
+The build failed. Fix the build errors and run again.
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo rm -rf bin obj
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ dotnetbuild
+dotnetbuild: command not found
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ dotnet build
+MSBuild version 17.8.49+7806cbf7b for .NET
+  Determining projects to restore...
+  Restored /home/Usuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/TcpCongestionObservatory.csproj (in 177 ms).
+  TcpCongestionObservatory -> /home/Usuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.70
+Usuário@Artemis1915:~/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...
+------------------------------------------------------
+Mapa carregado com sucesso (FD: 37).
+Aguardando tráfego TCP (ex: iperf3) para exibir os dados...
+------------------------------------------------------
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ 

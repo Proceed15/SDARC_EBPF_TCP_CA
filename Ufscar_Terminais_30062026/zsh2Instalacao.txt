@@ -1,0 +1,407 @@
+(base) ➜  tcp_atv_obs sudo apt update
+[sudo] senha para computacao: 
+Ignorar:1 https://storage.googleapis.com/download.dartlang.org/linux/debian stable InRelease
+Atingido:2 https://storage.googleapis.com/download.dartlang.org/linux/debian stable Release                                   
+Obter:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]                                                   
+Atingido:5 http://archive.ubuntu.com/ubuntu noble InRelease                                                                     
+Atingido:6 https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/noble pgadmin4 InRelease                                                             
+Obter:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]                                                                           
+Atingido:8 https://ppa.launchpadcontent.net/danielrichter2007/grub-customizer/ubuntu noble InRelease
+Atingido:9 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Lendo listas de pacotes... Pronto
+E: Arquivo Release para http://security.ubuntu.com/ubuntu/dists/noble-security/InRelease não é válido até o momento (inválido por mais 14min 45s). Atualizações para este repositório não serão aplicadas.
+E: Arquivo Release para http://archive.ubuntu.com/ubuntu/dists/noble-updates/InRelease não é válido até o momento (inválido por mais 2h 10min 4s). Atualizações para este repositório não serão aplicadas.
+(base) ➜  tcp_atv_obs sudo apt install -y linux-tools-common linux-tools-6.8.0-124-generic
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+linux-tools-common já é a versão mais nova (6.8.0-124.124).
+linux-tools-common configurado para instalar manualmente.
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libwoff1
+Utilize 'sudo apt autoremove' para o remover.
+Os NOVOS pacotes a seguir serão instalados:
+  linux-tools-6.8.0-124 linux-tools-6.8.0-124-generic
+0 pacotes atualizados, 2 pacotes novos instalados, 0 a serem removidos e 22 não atualizados.
+É preciso baixar 4.948 kB de arquivos.
+Depois desta operação, 19,7 MB adicionais de espaço em disco serão usados.
+Obter:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 linux-tools-6.8.0-124 amd64 6.8.0-124.124 [4.946 kB]
+Obter:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 linux-tools-6.8.0-124-generic amd64 6.8.0-124.124 [1.812 B]
+Baixados 4.948 kB em 0s (34,2 MB/s)                       
+A seleccionar pacote anteriormente não seleccionado linux-tools-6.8.0-124.
+(Lendo banco de dados ... 323004 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../linux-tools-6.8.0-124_6.8.0-124.124_amd64.deb ...
+A descompactar linux-tools-6.8.0-124 (6.8.0-124.124) ...
+A seleccionar pacote anteriormente não seleccionado linux-tools-6.8.0-124-generic.
+A preparar para desempacotar .../linux-tools-6.8.0-124-generic_6.8.0-124.124_amd64.deb ...
+A descompactar linux-tools-6.8.0-124-generic (6.8.0-124.124) ...
+Configurando linux-tools-6.8.0-124 (6.8.0-124.124) ...
+Configurando linux-tools-6.8.0-124-generic (6.8.0-124.124) ...
+(base) ➜  tcp_atv_obs sudo ln -sf /usr/lib/linux-tools/6.8.0-124-generic/bpftool /usr/local/bin/bpftool
+(base) ➜  tcp_atv_obs hash -r
+(base) ➜  tcp_atv_obs bpftool version
+bpftool v7.4.0
+using libbpf v1.4
+features:
+(base) ➜  tcp_atv_obs bpftool btf dump file /sys/kernel/btf/vmlinux format c > vmlinux.h
+(base) ➜  tcp_atv_obs ls -lh vmlinux.h
+-rw-rw-rw- 1 computacao computacao 3,3M jun 30 12:59 vmlinux.h
+(base) ➜  tcp_atv_obs clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+zsh: command not found: clang
+(base) ➜  tcp_atv_obs sudo apt install -y clang llvm libelf-dev libbpf-dev linux-headers-$(uname -r) build-essential
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+linux-headers-6.17.0-35-generic já é a versão mais nova (6.17.0-35.35~24.04.1).
+linux-headers-6.17.0-35-generic configurado para instalar manualmente.
+build-essential já é a versão mais nova (12.10ubuntu1).
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libwoff1
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  clang-18 libpfm4 libxml2-dev libz3-4 libz3-dev libzstd-dev llvm-18 llvm-18-dev llvm-18-linker-tools llvm-18-runtime llvm-18-tools llvm-runtime
+Pacotes sugeridos:
+  clang-18-doc wasi-libc llvm-18-doc
+Os NOVOS pacotes a seguir serão instalados:
+  clang clang-18 libbpf-dev libelf-dev libpfm4 libxml2-dev libz3-4 libz3-dev libzstd-dev llvm llvm-18 llvm-18-dev llvm-18-linker-tools llvm-18-runtime llvm-18-tools
+  llvm-runtime
+0 pacotes atualizados, 16 pacotes novos instalados, 0 a serem removidos e 22 não atualizados.
+É preciso baixar 80,7 MB de arquivos.
+Depois desta operação, 492 MB adicionais de espaço em disco serão usados.
+Obter:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 llvm-18-linker-tools amd64 1:18.1.3-1ubuntu1 [1.314 kB]
+Obter:2 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 clang-18 amd64 1:18.1.3-1ubuntu1 [80,0 kB]
+Obter:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 clang amd64 1:18.0-59~exp2 [5.846 B]
+Obter:4 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libzstd-dev amd64 1.5.5+dfsg2-2build1.1 [364 kB]
+Obter:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libelf-dev amd64 0.190-1.1ubuntu0.1 [68,5 kB]
+Obter:6 http://archive.ubuntu.com/ubuntu noble/main amd64 libbpf-dev amd64 1:1.3.0-2build2 [259 kB]
+Ignorar:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libxml2-dev amd64 2.9.14+dfsg-1.3ubuntu3.7
+Obter:8 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 llvm-18-runtime amd64 1:18.1.3-1ubuntu1 [538 kB]
+Obter:9 http://archive.ubuntu.com/ubuntu noble/universe amd64 llvm-runtime amd64 1:18.0-59~exp2 [5.496 B]
+Obter:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 libpfm4 amd64 4.13.0+git32-g0d4ed0e-1 [414 kB]
+Obter:11 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 llvm-18 amd64 1:18.1.3-1ubuntu1 [25,3 MB]
+Erro:7 http://security.ubuntu.com/ubuntu noble-updates/main amd64 libxml2-dev amd64 2.9.14+dfsg-1.3ubuntu3.7
+  404  Not Found [IP: 2606:4700:10::6814:1cf6 80]
+Obter:12 http://archive.ubuntu.com/ubuntu noble/universe amd64 llvm amd64 1:18.0-59~exp2 [4.146 B]
+Obter:13 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 llvm-18-tools amd64 1:18.1.3-1ubuntu1 [534 kB]
+Obter:14 http://archive.ubuntu.com/ubuntu noble/universe amd64 libz3-4 amd64 4.8.12-3.1build1 [5.836 kB]
+Obter:15 http://archive.ubuntu.com/ubuntu noble/universe amd64 libz3-dev amd64 4.8.12-3.1build1 [72,2 kB]
+Obter:16 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 llvm-18-dev amd64 1:18.1.3-1ubuntu1 [45,1 MB]
+Baixados 79,9 MB em 3s (30,5 MB/s)      
+E: Falhou ao buscar http://security.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2-dev_2.9.14%2bdfsg-1.3ubuntu3.7_amd64.deb  404  Not Found [IP: 2606:4700:10::6814:1cf6 80]
+E: Impossível buscar alguns arquivos, talvez executar apt-get update ou tentar com --fix-missing?
+(base) ➜  tcp_atv_obs sudo apt install -y dotnet-sdk-8.0
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libwoff1
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  aspnetcore-runtime-8.0 aspnetcore-targeting-pack-8.0 dotnet-apphost-pack-8.0 dotnet-host-8.0 dotnet-hostfxr-8.0 dotnet-runtime-8.0 dotnet-targeting-pack-8.0
+  dotnet-templates-8.0 netstandard-targeting-pack-2.1-8.0
+Pacotes sugeridos:
+  aspnetcore-runtime-dbg-8.0 dotnet-runtime-dbg-8.0 dotnet-sdk-dbg-8.0
+Os NOVOS pacotes a seguir serão instalados:
+  aspnetcore-runtime-8.0 aspnetcore-targeting-pack-8.0 dotnet-apphost-pack-8.0 dotnet-host-8.0 dotnet-hostfxr-8.0 dotnet-runtime-8.0 dotnet-sdk-8.0
+  dotnet-targeting-pack-8.0 dotnet-templates-8.0 netstandard-targeting-pack-2.1-8.0
+0 pacotes atualizados, 10 pacotes novos instalados, 0 a serem removidos e 22 não atualizados.
+É preciso baixar 136 MB de arquivos.
+Depois desta operação, 495 MB adicionais de espaço em disco serão usados.
+Obter:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dotnet-host-8.0 amd64 8.0.28-0ubuntu1~24.04.1 [186 kB]
+Obter:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dotnet-hostfxr-8.0 amd64 8.0.28-0ubuntu1~24.04.1 [144 kB]
+Obter:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dotnet-runtime-8.0 amd64 8.0.28-0ubuntu1~24.04.1 [23,9 MB]
+Obter:4 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 aspnetcore-runtime-8.0 amd64 8.0.28-0ubuntu1~24.04.1 [8.388 kB]
+Obter:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 aspnetcore-targeting-pack-8.0 amd64 8.0.28-0ubuntu1~24.04.1 [1.921 kB]
+Obter:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dotnet-apphost-pack-8.0 amd64 8.0.28-0ubuntu1~24.04.1 [3.888 kB]
+Obter:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dotnet-targeting-pack-8.0 amd64 8.0.28-0ubuntu1~24.04.1 [2.951 kB]
+Obter:8 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dotnet-templates-8.0 amd64 8.0.128-0ubuntu1~24.04.1 [2.194 kB]
+Obter:9 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 netstandard-targeting-pack-2.1-8.0 amd64 8.0.128-0ubuntu1~24.04.1 [1.391 kB]
+Obter:10 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dotnet-sdk-8.0 amd64 8.0.128-0ubuntu1~24.04.1 [90,8 MB]
+Baixados 136 MB em 2s (70,4 MB/s)          
+A seleccionar pacote anteriormente não seleccionado dotnet-host-8.0.
+(Lendo banco de dados ... 323035 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../0-dotnet-host-8.0_8.0.28-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar dotnet-host-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado dotnet-hostfxr-8.0.
+A preparar para desempacotar .../1-dotnet-hostfxr-8.0_8.0.28-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar dotnet-hostfxr-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado dotnet-runtime-8.0.
+A preparar para desempacotar .../2-dotnet-runtime-8.0_8.0.28-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar dotnet-runtime-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado aspnetcore-runtime-8.0.
+A preparar para desempacotar .../3-aspnetcore-runtime-8.0_8.0.28-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar aspnetcore-runtime-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado aspnetcore-targeting-pack-8.0.
+A preparar para desempacotar .../4-aspnetcore-targeting-pack-8.0_8.0.28-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar aspnetcore-targeting-pack-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado dotnet-apphost-pack-8.0.
+A preparar para desempacotar .../5-dotnet-apphost-pack-8.0_8.0.28-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar dotnet-apphost-pack-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado dotnet-targeting-pack-8.0.
+A preparar para desempacotar .../6-dotnet-targeting-pack-8.0_8.0.28-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar dotnet-targeting-pack-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado dotnet-templates-8.0.
+A preparar para desempacotar .../7-dotnet-templates-8.0_8.0.128-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar dotnet-templates-8.0 (8.0.128-0ubuntu1~24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado netstandard-targeting-pack-2.1-8.0.
+A preparar para desempacotar .../8-netstandard-targeting-pack-2.1-8.0_8.0.128-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar netstandard-targeting-pack-2.1-8.0 (8.0.128-0ubuntu1~24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado dotnet-sdk-8.0.
+A preparar para desempacotar .../9-dotnet-sdk-8.0_8.0.128-0ubuntu1~24.04.1_amd64.deb ...
+A descompactar dotnet-sdk-8.0 (8.0.128-0ubuntu1~24.04.1) ...
+Configurando dotnet-targeting-pack-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+Configurando netstandard-targeting-pack-2.1-8.0 (8.0.128-0ubuntu1~24.04.1) ...
+Configurando aspnetcore-targeting-pack-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+Configurando dotnet-apphost-pack-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+Configurando dotnet-host-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+Configurando dotnet-hostfxr-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+Configurando dotnet-templates-8.0 (8.0.128-0ubuntu1~24.04.1) ...
+Configurando dotnet-runtime-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+Configurando aspnetcore-runtime-8.0 (8.0.28-0ubuntu1~24.04.1) ...
+Configurando dotnet-sdk-8.0 (8.0.128-0ubuntu1~24.04.1) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+(base) ➜  tcp_atv_obs clang --version
+zsh: command not found: clang
+(base) ➜  tcp_atv_obs dotnet --version
+8.0.128
+(base) ➜  tcp_atv_obs sudo apt update
+Atingido:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Ignorar:2 https://storage.googleapis.com/download.dartlang.org/linux/debian stable InRelease                                 
+Atingido:3 https://storage.googleapis.com/download.dartlang.org/linux/debian stable Release                                                               
+Obter:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]                                                                               
+Atingido:6 http://archive.ubuntu.com/ubuntu noble-backports InRelease                        
+Obter:7 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [791 kB]
+Obter:8 http://security.ubuntu.com/ubuntu noble-security/main i386 Packages [316 kB]       
+Obter:9 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [181 kB]                             
+Obter:10 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [44,9 kB]                           
+Obter:11 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11,7 kB]                                 
+Obter:12 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1.071 kB]                              
+Obter:13 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [245 kB]                         
+Obter:14 http://security.ubuntu.com/ubuntu noble-security/universe i386 Packages [813 kB]                                
+Obter:15 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1.171 kB]                       
+Obter:16 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [230 kB]                           
+Obter:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [76,3 kB]                        
+Obter:18 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [24,2 kB]                            
+Obter:19 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]                                      
+Atingido:20 https://ppa.launchpadcontent.net/danielrichter2007/grub-customizer/ubuntu noble InRelease
+Atingido:21 https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/noble pgadmin4 InRelease
+Lendo listas de pacotes... Pronto
+E: Arquivo Release para http://archive.ubuntu.com/ubuntu/dists/noble-updates/InRelease não é válido até o momento (inválido por mais 1h 52min 45s). Atualizações para este repositório não serão aplicadas.
+(base) ➜  tcp_atv_obs sudo apt install -y clang
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libwoff1
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  clang-18 libpfm4 libxml2 libxml2-dev libz3-4 libz3-dev llvm-18 llvm-18-dev llvm-18-linker-tools llvm-18-runtime llvm-18-tools
+Pacotes sugeridos:
+  clang-18-doc wasi-libc llvm-18-doc
+Os NOVOS pacotes a seguir serão instalados:
+  clang clang-18 libpfm4 libxml2-dev libz3-4 libz3-dev llvm-18 llvm-18-dev llvm-18-linker-tools llvm-18-runtime llvm-18-tools
+Os pacotes a seguir serão atualizados:
+  libxml2
+1 pacotes atualizados, 11 pacotes novos instalados, 0 a serem removidos e 50 não atualizados.
+É preciso baixar 1.545 kB/80,7 MB de arquivos.
+Depois desta operação, 489 MB adicionais de espaço em disco serão usados.
+Obter:1 http://security.ubuntu.com/ubuntu noble-security/main amd64 libxml2 amd64 2.9.14+dfsg-1.3ubuntu3.8 [764 kB]
+Obter:2 http://security.ubuntu.com/ubuntu noble-security/main amd64 libxml2-dev amd64 2.9.14+dfsg-1.3ubuntu3.8 [782 kB]
+Baixados 1.545 kB em 0s (18,1 MB/s)
+(Lendo banco de dados ... 327706 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../00-libxml2_2.9.14+dfsg-1.3ubuntu3.8_amd64.deb ...
+A descompactar libxml2:amd64 (2.9.14+dfsg-1.3ubuntu3.8) sobre (2.9.14+dfsg-1.3ubuntu3.7) ...
+A seleccionar pacote anteriormente não seleccionado llvm-18-linker-tools.
+A preparar para desempacotar .../01-llvm-18-linker-tools_1%3a18.1.3-1ubuntu1_amd64.deb ...
+A descompactar llvm-18-linker-tools (1:18.1.3-1ubuntu1) ...
+A seleccionar pacote anteriormente não seleccionado clang-18.
+A preparar para desempacotar .../02-clang-18_1%3a18.1.3-1ubuntu1_amd64.deb ...
+A descompactar clang-18 (1:18.1.3-1ubuntu1) ...
+A seleccionar pacote anteriormente não seleccionado clang.
+A preparar para desempacotar .../03-clang_1%3a18.0-59~exp2_amd64.deb ...
+A descompactar clang (1:18.0-59~exp2) ...
+A seleccionar pacote anteriormente não seleccionado libxml2-dev:amd64.
+A preparar para desempacotar .../04-libxml2-dev_2.9.14+dfsg-1.3ubuntu3.8_amd64.deb ...
+A descompactar libxml2-dev:amd64 (2.9.14+dfsg-1.3ubuntu3.8) ...
+A seleccionar pacote anteriormente não seleccionado llvm-18-runtime.
+A preparar para desempacotar .../05-llvm-18-runtime_1%3a18.1.3-1ubuntu1_amd64.deb ...
+A descompactar llvm-18-runtime (1:18.1.3-1ubuntu1) ...
+A seleccionar pacote anteriormente não seleccionado libpfm4:amd64.
+A preparar para desempacotar .../06-libpfm4_4.13.0+git32-g0d4ed0e-1_amd64.deb ...
+A descompactar libpfm4:amd64 (4.13.0+git32-g0d4ed0e-1) ...
+A seleccionar pacote anteriormente não seleccionado llvm-18.
+A preparar para desempacotar .../07-llvm-18_1%3a18.1.3-1ubuntu1_amd64.deb ...
+A descompactar llvm-18 (1:18.1.3-1ubuntu1) ...
+A seleccionar pacote anteriormente não seleccionado llvm-18-tools.
+A preparar para desempacotar .../08-llvm-18-tools_1%3a18.1.3-1ubuntu1_amd64.deb ...
+A descompactar llvm-18-tools (1:18.1.3-1ubuntu1) ...
+A seleccionar pacote anteriormente não seleccionado libz3-4:amd64.
+A preparar para desempacotar .../09-libz3-4_4.8.12-3.1build1_amd64.deb ...
+A descompactar libz3-4:amd64 (4.8.12-3.1build1) ...
+A seleccionar pacote anteriormente não seleccionado libz3-dev:amd64.
+A preparar para desempacotar .../10-libz3-dev_4.8.12-3.1build1_amd64.deb ...
+A descompactar libz3-dev:amd64 (4.8.12-3.1build1) ...
+A seleccionar pacote anteriormente não seleccionado llvm-18-dev.
+A preparar para desempacotar .../11-llvm-18-dev_1%3a18.1.3-1ubuntu1_amd64.deb ...
+A descompactar llvm-18-dev (1:18.1.3-1ubuntu1) ...
+Configurando llvm-18-tools (1:18.1.3-1ubuntu1) ...
+Configurando libz3-4:amd64 (4.8.12-3.1build1) ...
+Configurando libpfm4:amd64 (4.13.0+git32-g0d4ed0e-1) ...
+Configurando llvm-18-linker-tools (1:18.1.3-1ubuntu1) ...
+Configurando llvm-18-runtime (1:18.1.3-1ubuntu1) ...
+Configurando libxml2:amd64 (2.9.14+dfsg-1.3ubuntu3.8) ...
+Configurando libz3-dev:amd64 (4.8.12-3.1build1) ...
+Configurando clang-18 (1:18.1.3-1ubuntu1) ...
+Configurando libxml2-dev:amd64 (2.9.14+dfsg-1.3ubuntu3.8) ...
+Configurando clang (1:18.0-59~exp2) ...
+Configurando llvm-18 (1:18.1.3-1ubuntu1) ...
+Configurando llvm-18-dev (1:18.1.3-1ubuntu1) ...
+A processar 'triggers' para systemd (255.4-1ubuntu8.16) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+A processar 'triggers' para libc-bin (2.39-0ubuntu8.7) ...
+(base) ➜  tcp_atv_obs clang --version         
+Ubuntu clang version 18.1.3 (1ubuntu1)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+(base) ➜  tcp_atv_obs sudo apt install -y clang llvm libelf-dev libbpf-dev linux-headers-$(uname -r) build-essential
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+clang já é a versão mais nova (1:18.0-59~exp2).
+linux-headers-6.17.0-35-generic já é a versão mais nova (6.17.0-35.35~24.04.1).
+linux-headers-6.17.0-35-generic configurado para instalar manualmente.
+build-essential já é a versão mais nova (12.10ubuntu1).
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libwoff1
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  libzstd-dev llvm-runtime
+Os NOVOS pacotes a seguir serão instalados:
+  libbpf-dev libelf-dev libzstd-dev llvm llvm-runtime
+0 pacotes atualizados, 5 pacotes novos instalados, 0 a serem removidos e 50 não atualizados.
+É preciso baixar 0 B/701 kB de arquivos.
+Depois desta operação, 2.846 kB adicionais de espaço em disco serão usados.
+A seleccionar pacote anteriormente não seleccionado libzstd-dev:amd64.
+(Lendo banco de dados ... 331058 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../libzstd-dev_1.5.5+dfsg2-2build1.1_amd64.deb ...
+A descompactar libzstd-dev:amd64 (1.5.5+dfsg2-2build1.1) ...
+A seleccionar pacote anteriormente não seleccionado libelf-dev:amd64.
+A preparar para desempacotar .../libelf-dev_0.190-1.1ubuntu0.1_amd64.deb ...
+A descompactar libelf-dev:amd64 (0.190-1.1ubuntu0.1) ...
+A seleccionar pacote anteriormente não seleccionado libbpf-dev:amd64.
+A preparar para desempacotar .../libbpf-dev_1%3a1.3.0-2build2_amd64.deb ...
+A descompactar libbpf-dev:amd64 (1:1.3.0-2build2) ...
+A seleccionar pacote anteriormente não seleccionado llvm-runtime:amd64.
+A preparar para desempacotar .../llvm-runtime_1%3a18.0-59~exp2_amd64.deb ...
+A descompactar llvm-runtime:amd64 (1:18.0-59~exp2) ...
+A seleccionar pacote anteriormente não seleccionado llvm.
+A preparar para desempacotar .../llvm_1%3a18.0-59~exp2_amd64.deb ...
+A descompactar llvm (1:18.0-59~exp2) ...
+Configurando libzstd-dev:amd64 (1.5.5+dfsg2-2build1.1) ...
+Configurando llvm-runtime:amd64 (1:18.0-59~exp2) ...
+Configurando libelf-dev:amd64 (0.190-1.1ubuntu0.1) ...
+Configurando llvm (1:18.0-59~exp2) ...
+Configurando libbpf-dev:amd64 (1:1.3.0-2build2) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+(base) ➜  tcp_atv_obs clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+(base) ➜  tcp_atv_obs 
+(base) ➜  tcp_atv_obs cd TcpCongestionObservatory                                                            
+(base) ➜  TcpCongestionObservatory sudo dotnet run
+
+Bem-vindo(a) ao .NET 8.0.
+---------------------
+Versão do SDK: 8.0.128
+
+----------------
+Instalou um certificado de desenvolvimento ASP.NET Core HTTPS.
+o confiar no certificado, veja as instruções: https://aka.ms/dotnet-https-linux
+
+----------------
+Escreva seu primeiro aplicativo: https://aka.ms/dotnet-hello-world
+Descubra o que há de novo: https://aka.ms/dotnet-whats-new
+Explorar a documentação: https://aka.ms/dotnet-docs
+Relate problemas e encontre a fonte no GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' para ver os comandos disponíveis ou visite: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
+Unhandled exception: System.ComponentModel.Win32Exception (13): An error occurred trying to start process '/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory' with working directory '/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory'. Permission denied
+   at System.Diagnostics.Process.ForkAndExecProcess(ProcessStartInfo startInfo, String resolvedFilename, String[] argv, String[] envp, String cwd, Boolean setCredentials, UInt32 userId, UInt32 groupId, UInt32[] groups, Int32& stdinFd, Int32& stdoutFd, Int32& stderrFd, Boolean usesTerminal, Boolean throwOnNoExec)
+   at System.Diagnostics.Process.StartCore(ProcessStartInfo startInfo)
+   at Microsoft.DotNet.Cli.Utils.Command.Execute(Action`1 processStarted)
+   at Microsoft.DotNet.Tools.Run.RunCommand.Execute()
+   at System.CommandLine.Invocation.InvocationPipeline.Invoke(ParseResult parseResult)
+   at Microsoft.DotNet.Cli.Program.ProcessArgs(String[] args, TimeSpan startupTime, ITelemetry telemetryClient)
+(base) ➜  TcpCongestionObservatory sudo dotnet run
+Unhandled exception: System.ComponentModel.Win32Exception (13): An error occurred trying to start process '/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory' with working directory '/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory'. Permission denied
+   at System.Diagnostics.Process.ForkAndExecProcess(ProcessStartInfo startInfo, String resolvedFilename, String[] argv, String[] envp, String cwd, Boolean setCredentials, UInt32 userId, UInt32 groupId, UInt32[] groups, Int32& stdinFd, Int32& stdoutFd, Int32& stderrFd, Boolean usesTerminal, Boolean throwOnNoExec)
+   at System.Diagnostics.Process.StartCore(ProcessStartInfo startInfo)
+   at Microsoft.DotNet.Cli.Utils.Command.Execute(Action`1 processStarted)
+   at Microsoft.DotNet.Tools.Run.RunCommand.Execute()
+   at System.CommandLine.Invocation.InvocationPipeline.Invoke(ParseResult parseResult)
+   at Microsoft.DotNet.Cli.Program.ProcessArgs(String[] args, TimeSpan startupTime, ITelemetry telemetryClient)
+(base) ➜  TcpCongestionObservatory sudo apt install -y iperf3
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libwoff1
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  libiperf0 libsctp1
+Pacotes sugeridos:
+  lksctp-tools
+Os NOVOS pacotes a seguir serão instalados:
+  iperf3 libiperf0 libsctp1
+0 pacotes atualizados, 3 pacotes novos instalados, 0 a serem removidos e 50 não atualizados.
+É preciso baixar 115 kB de arquivos.
+Depois desta operação, 390 kB adicionais de espaço em disco serão usados.
+Obter:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libsctp1 amd64 1.0.19+dfsg-2build1 [9.146 B]
+Obter:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 libiperf0 amd64 3.16-1build2 [87,1 kB]
+Obter:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 iperf3 amd64 3.16-1build2 [19,0 kB]
+Baixados 115 kB em 0s (350 kB/s)  
+Pré-configurando pacotes ...
+Failed to stop iperf3.service: Unit iperf3.service not loaded.
+A seleccionar pacote anteriormente não seleccionado libsctp1:amd64.
+(Lendo banco de dados ... 331224 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../libsctp1_1.0.19+dfsg-2build1_amd64.deb ...
+A descompactar libsctp1:amd64 (1.0.19+dfsg-2build1) ...
+A seleccionar pacote anteriormente não seleccionado libiperf0:amd64.
+A preparar para desempacotar .../libiperf0_3.16-1build2_amd64.deb ...
+A descompactar libiperf0:amd64 (3.16-1build2) ...
+A seleccionar pacote anteriormente não seleccionado iperf3.
+A preparar para desempacotar .../iperf3_3.16-1build2_amd64.deb ...
+A descompactar iperf3 (3.16-1build2) ...
+Configurando libsctp1:amd64 (1.0.19+dfsg-2build1) ...
+Configurando libiperf0:amd64 (3.16-1build2) ...
+Configurando iperf3 (3.16-1build2) ...
+A processar 'triggers' para ufw (0.36.2-6) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+A processar 'triggers' para libc-bin (2.39-0ubuntu8.7) ...
+(base) ➜  TcpCongestionObservatory dotnet build
+
+Bem-vindo(a) ao .NET 8.0.
+---------------------
+Versão do SDK: 8.0.128
+
+----------------
+Instalou um certificado de desenvolvimento ASP.NET Core HTTPS.
+o confiar no certificado, veja as instruções: https://aka.ms/dotnet-https-linux
+
+----------------
+Escreva seu primeiro aplicativo: https://aka.ms/dotnet-hello-world
+Descubra o que há de novo: https://aka.ms/dotnet-whats-new
+Explorar a documentação: https://aka.ms/dotnet-docs
+Relate problemas e encontre a fonte no GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' para ver os comandos disponíveis ou visite: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
+Versão do MSBuild 17.8.49+7806cbf7b para .NET
+  Determining projects to restore...
+  Restored /home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory/TcpCongestionObservatory.csproj (in 537 ms).
+  TcpCongestionObservatory -> /home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory.dll
+
+Compilação com êxito.
+    0 Aviso(s)
+    0 Erro(s)
+
+Tempo Decorrido 00:00:01.33
+(base) ➜  TcpCongestionObservatory 

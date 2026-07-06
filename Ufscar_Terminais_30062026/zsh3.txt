@@ -1,0 +1,24 @@
+cd%                                                                                                                                                                     
+(base) ➜  tcp_atv_obs cd TcpCongestionObservatory
+(base) ➜  TcpCongestionObservatory sudo dotnet run            
+[sudo] senha para computacao: 
+Unhandled exception: System.ComponentModel.Win32Exception (13): An error occurred trying to start process '/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory' with working directory '/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory'. Permission denied
+   at System.Diagnostics.Process.ForkAndExecProcess(ProcessStartInfo startInfo, String resolvedFilename, String[] argv, String[] envp, String cwd, Boolean setCredentials, UInt32 userId, UInt32 groupId, UInt32[] groups, Int32& stdinFd, Int32& stdoutFd, Int32& stderrFd, Boolean usesTerminal, Boolean throwOnNoExec)
+   at System.Diagnostics.Process.StartCore(ProcessStartInfo startInfo)
+   at Microsoft.DotNet.Cli.Utils.Command.Execute(Action`1 processStarted)
+   at Microsoft.DotNet.Tools.Run.RunCommand.Execute()
+   at System.CommandLine.Invocation.InvocationPipeline.Invoke(ParseResult parseResult)
+   at Microsoft.DotNet.Cli.Program.ProcessArgs(String[] args, TimeSpan startupTime, ITelemetry telemetryClient)
+(base) ➜  TcpCongestionObservatory sudo dotnet run 
+Unhandled exception: System.ComponentModel.Win32Exception (13): An error occurred trying to start process '/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory' with working directory '/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs/TcpCongestionObservatory'. Permission denied
+   at System.Diagnostics.Process.ForkAndExecProcess(ProcessStartInfo startInfo, String resolvedFilename, String[] argv, String[] envp, String cwd, Boolean setCredentials, UInt32 userId, UInt32 groupId, UInt32[] groups, Int32& stdinFd, Int32& stdoutFd, Int32& stderrFd, Boolean usesTerminal, Boolean throwOnNoExec)
+   at System.Diagnostics.Process.StartCore(ProcessStartInfo startInfo)
+   at Microsoft.DotNet.Cli.Utils.Command.Execute(Action`1 processStarted)
+   at Microsoft.DotNet.Tools.Run.RunCommand.Execute()
+   at System.CommandLine.Invocation.InvocationPipeline.Invoke(ParseResult parseResult)
+   at Microsoft.DotNet.Cli.Program.ProcessArgs(String[] args, TimeSpan startupTime, ITelemetry telemetryClient)
+(base) ➜  TcpCongestionObservatory sudo ./bin/Debug/net8.0/TcpCongestionObservatory
+sudo: ./bin/Debug/net8.0/TcpCongestionObservatory: comando não encontrado
+(base) ➜  TcpCongestionObservatory sudo ./bin/Debug/net8.0/TcpCongestionObservatory.dll
+sudo: ./bin/Debug/net8.0/TcpCongestionObservatory.dll: comando não encontrado
+(base) ➜  TcpCongestionObservatory 

@@ -1,0 +1,14 @@
+CaminhoDoUsuário/labs-ebpf$ ls -la ~/labs-ebpf/tcp_atv_obs
+total 4048
+drwxr-xr-x 2 jrlsf jrlsf    4096 Jun 15 16:29 .
+drwxrwxrwx 4 jrlsf jrlsf    4096 Jun 15 16:01 ..
+-rw-r--r-- 1 jrlsf jrlsf    3912 Jun 15 16:27 AtualizacoesNoLinux.txt
+-rw-r--r-- 1 jrlsf jrlsf     618 Jun 15 16:32 InstalaçãoComandos.txt
+-rw-r--r-- 1 jrlsf jrlsf    5351 Jun 15 16:17 InstalaçãoTerminal.txt
+-rw-r--r-- 1 jrlsf jrlsf     120 Jun 15 16:29 go.mod
+-rw-r--r-- 1 jrlsf jrlsf     318 Jun 15 16:29 go.sum
+-rw-r--r-- 1 jrlsf jrlsf    2416 Jun 15 16:25 tcp_co_kernel.c
+-rw-r--r-- 1 jrlsf jrlsf  776568 Jun 15 16:25 tcp_co_kernel.o
+-rw-r--r-- 1 jrlsf jrlsf 3328587 Jun 15 16:15 vmlinux.h
+
+CaminhoDoUsuário/labs-ebpf$ 

@@ -1,0 +1,21 @@
+OCaminhoDoUsuário/labs-ebpf$ cd tcp_atv_obs
+OCaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[sudo] password for jrlsf: 
+[]
+OCaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[]
+OCaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[]
+OCaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[]
+OCaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[]
+OCaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[]
+OCaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map > Resultados_RENO.txt
+/**
+Aqui o Aru=quvio foi criado e o resultado salvo no mesmo
+**/
+OCaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[]
+OCaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ 

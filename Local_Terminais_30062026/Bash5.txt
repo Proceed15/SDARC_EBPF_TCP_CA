@@ -1,0 +1,30 @@
+CaminhoDoUsuário/labs-ebpf$ clang -O2 -g -target bpf -c tcp_co_kernel.c -o tcp_co_kernel.o
+clang: error: no such file or directory: 'tcp_co_kernel.c'
+clang: error: no input files
+CaminhoDoUsuário/labs-ebpf$ cd tcp_atv_obs
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -c tcp_co_kernel.c -o tcp_co_kernel.o
+tcp_co_kernel.c:41:5: error: Must specify a BPF target arch via __TARGET_ARCH_xxx
+   41 | int BPF_KPROBE(kprobe_tcp_ack, struct sock *sk)
+      |     ^
+/usr/include/bpf/bpf_tracing.h:817:20: note: expanded from macro 'BPF_KPROBE'
+  817 |         return ____##name(___bpf_kprobe_args(args));                        \
+      |                           ^
+/usr/include/bpf/bpf_tracing.h:797:41: note: expanded from macro '___bpf_kprobe_args'
+  797 | #define ___bpf_kprobe_args(args...)     ___bpf_apply(___bpf_kprobe_args, ___bpf_narg(args))(args)
+      |                                         ^
+/usr/include/bpf/bpf_helpers.h:195:29: note: expanded from macro '___bpf_apply'
+  195 | #define ___bpf_apply(fn, n) ___bpf_concat(fn, n)
+      |                             ^
+note: (skipping 2 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/bpf/bpf_tracing.h:789:72: note: expanded from macro '___bpf_kprobe_args1'
+  789 | #define ___bpf_kprobe_args1(x)          ___bpf_kprobe_args0(), (void *)PT_REGS_PARM1(ctx)
+      |                                                                        ^
+/usr/include/bpf/bpf_tracing.h:563:29: note: expanded from macro 'PT_REGS_PARM1'
+  563 | #define PT_REGS_PARM1(x) ({ _Pragma(__BPF_TARGET_MISSING); 0l; })
+      |                             ^
+<scratch space>:21:6: note: expanded from here
+   21 |  GCC error "Must specify a BPF target arch via __TARGET_ARCH_xxx"
+      |      ^
+1 error generated.
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ 

@@ -1,0 +1,12 @@
+CaminhoDoUsuário/labs-ebpf$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+clang: error: no such file or directory: 'tcp_co_kernel.c'
+clang: error: no input files
+CaminhoDoUsuário/labs-ebpf$ cd tcp_atv_obs
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo cat /sys/kernel/debug/tracing/trace_pipe
+[sudo] password for jrlsf: 
+^C
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo cat /sys/kernel/debug/tracing/trace_pipe
+^C
+
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ 

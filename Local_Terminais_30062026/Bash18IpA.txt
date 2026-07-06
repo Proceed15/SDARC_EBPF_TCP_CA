@@ -1,0 +1,26 @@
+CaminhoDoUsuário/labs-ebpf$ cd tcp_atv_obs
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+CaminhoDoUsuário/labs-ebpf$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu Porta1 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback LoopbackLINKANDBRD brd LoopbackLINKANDBRD
+    inet InetLocalhost scope host lo
+       valid_lft forever preferred_lft forever
+    inet IPInet1 brd IPBrd1 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: loopback0: <BROADCAST,MULTICAST,UP,LOWER_UP> MTULoopBack0 qdisc mq state UP group default qlen 1000
+    link/ether LinkEther1 brd ff:ff:ff:ff:ff:ff
+3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> MTUEth0 qdisc mq state UP group default qlen 1000
+    link/ether LinkEther2 brd ff:ff:ff:ff:ff:ff
+    inet IPInet2 brd IPBrd2 scope global noprefixroute eth0
+       valid_lft forever preferred_lft forever
+    inet6 IP_Inet6_1_64 scope global nodad deprecated noprefixroute 
+       valid_lft forever preferred_lft 0sec
+    inet6 IP_Inet6_2_128 scope global nodad noprefixroute 
+       valid_lft forever preferred_lft forever
+    inet6 IP_Inet6_3_64 scope link nodad noprefixroute 
+       valid_lft forever preferred_lft forever
+4: eth1: <BROADCAST,MULTICAST> MTULoopBack0 qdisc mq state DOWN group default qlen 1000
+    link/ether LinkEther3 brd ff:ff:ff:ff:ff:ff
+CaminhoDoUsuário/labs-ebpf$ 

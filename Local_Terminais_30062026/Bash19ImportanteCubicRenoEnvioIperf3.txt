@@ -1,0 +1,71 @@
+CaminhoDoUsuário/labs-ebpf$ cd tcp_atv_obs
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo sysctl -w net.ipv4.tcp_congestion_control=cubic
+[sudo] password for jrlsf: 
+net.ipv4.tcp_congestion_control = cubic
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ iperf3 -c 186.219.88.188 -p 5202 -t 10
+Connecting to host 186.219.88.188, port 5202
+[  5] local 186.219.88.188 port 46104 connected to 186.219.88.188 port 5202
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  4.74 GBytes  40.7 Gbits/sec    0   2.19 MBytes       
+[  5]   1.00-2.00   sec  4.84 GBytes  41.6 Gbits/sec    0   2.50 MBytes       
+[  5]   2.00-3.00   sec  4.93 GBytes  42.3 Gbits/sec    0   3.37 MBytes       
+[  5]   3.00-4.00   sec  4.91 GBytes  42.2 Gbits/sec    0   3.56 MBytes       
+[  5]   4.00-5.00   sec  4.62 GBytes  39.6 Gbits/sec    0   3.93 MBytes       
+[  5]   5.00-6.00   sec  4.94 GBytes  42.4 Gbits/sec    0   5.93 MBytes       
+[  5]   6.00-7.00   sec  4.81 GBytes  41.3 Gbits/sec    6   5.93 MBytes       
+[  5]   7.00-8.00   sec  4.85 GBytes  41.7 Gbits/sec    0   5.93 MBytes       
+[  5]   8.00-9.00   sec  4.71 GBytes  40.4 Gbits/sec    0   5.93 MBytes       
+[  5]   9.00-10.00  sec  4.64 GBytes  39.7 Gbits/sec    5   5.93 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec  48.1 GBytes  41.3 Gbits/sec   11             sender
+[  5]   0.00-10.00  sec  48.1 GBytes  41.3 Gbits/sec                  receiver
+
+iperf Done.
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ iperf3 -c 186.219.88.188 -p 5202 -t 10
+Connecting to host 186.219.88.188, port 5202
+[  5] local 186.219.88.188 port 44640 connected to 186.219.88.188 port 5202
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  4.50 GBytes  38.6 Gbits/sec   33   2.75 MBytes       
+[  5]   1.00-2.00   sec  4.64 GBytes  39.9 Gbits/sec    3   3.06 MBytes       
+[  5]   2.00-3.00   sec  4.71 GBytes  40.4 Gbits/sec    4   3.62 MBytes       
+[  5]   3.00-4.00   sec  4.87 GBytes  41.9 Gbits/sec    0   3.62 MBytes       
+[  5]   4.00-5.00   sec  4.72 GBytes  40.5 Gbits/sec    0   3.75 MBytes       
+[  5]   5.00-6.00   sec  4.95 GBytes  42.5 Gbits/sec    0   4.06 MBytes       
+[  5]   6.00-7.00   sec  4.77 GBytes  40.9 Gbits/sec    0   4.37 MBytes       
+[  5]   7.00-8.00   sec  4.82 GBytes  41.4 Gbits/sec    0   4.37 MBytes       
+[  5]   8.00-9.00   sec  5.00 GBytes  43.0 Gbits/sec    0   4.37 MBytes       
+[  5]   9.00-10.01  sec  4.90 GBytes  41.9 Gbits/sec    0   4.37 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.01  sec  47.9 GBytes  41.1 Gbits/sec   40             sender
+[  5]   0.00-10.01  sec  47.9 GBytes  41.1 Gbits/sec                  receiver
+
+iperf Done.
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sysctl net.ipv4.tcp_congestion_control
+net.ipv4.tcp_congestion_control = cubic
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo sysctl -w net.ipv4.tcp_congestion_control=reno
+net.ipv4.tcp_congestion_control = reno
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sysctl net.ipv4.tcp_congestion_control
+net.ipv4.tcp_congestion_control = reno
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ iperf3 -c 186.219.88.188 -p 5202 -t 10
+Connecting to host 186.219.88.188, port 5202
+[  5] local 186.219.88.188 port 45014 connected to 186.219.88.188 port 5202
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  4.74 GBytes  40.7 Gbits/sec    4   12.6 MBytes       
+[  5]   1.00-2.00   sec  4.35 GBytes  37.3 Gbits/sec    1   13.9 MBytes       
+[  5]   2.00-3.00   sec  4.84 GBytes  41.6 Gbits/sec    2   13.9 MBytes       
+[  5]   3.00-4.00   sec  4.85 GBytes  41.6 Gbits/sec    0   13.9 MBytes       
+[  5]   4.00-5.00   sec  4.85 GBytes  41.7 Gbits/sec    4   14.0 MBytes       
+[  5]   5.00-6.00   sec  4.91 GBytes  42.2 Gbits/sec    0   14.0 MBytes       
+[  5]   6.00-7.00   sec  4.70 GBytes  40.4 Gbits/sec    0   14.0 MBytes       
+[  5]   7.00-8.00   sec  5.21 GBytes  44.8 Gbits/sec    0   14.0 MBytes       
+[  5]   8.00-9.00   sec  5.13 GBytes  44.0 Gbits/sec    0   14.0 MBytes       
+[  5]   9.00-10.00  sec  4.74 GBytes  40.7 Gbits/sec    3   14.0 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec  48.4 GBytes  41.6 Gbits/sec   14             sender
+[  5]   0.00-10.00  sec  48.4 GBytes  41.6 Gbits/sec                  receiver
+
+iperf Done.
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ 

@@ -1,0 +1,35 @@
+CaminhoDoUsuário/labs-ebpf$ sudo bpftool map dump name tcp_metrics_map
+[sudo] password for jrlsf: 
+[]
+CaminhoDoUsuário/labs-ebpf$ cd tcp_atv_obs
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[]
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ cd TcpCongestionObservatory
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo bpftool map dump name tcp_metrics_map
+[]
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ iperf3 -c 127.0.0.1 -p 5202 -t 10
+^C- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+iperf3: interrupt - the client has terminated
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ iperf3 -c 127.0.0.1 -p 5202 -t 10
+Connecting to host 127.0.0.1, port 5202
+[  5] local 127.0.0.1 port 46256 connected to 127.0.0.1 port 5202
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  1.24 GBytes  10.6 Gbits/sec    0   2.88 MBytes       
+[  5]   1.00-2.00   sec  1.32 GBytes  11.3 Gbits/sec    0   3.24 MBytes       
+[  5]   2.00-3.00   sec  1.21 GBytes  10.4 Gbits/sec    0   3.45 MBytes       
+[  5]   3.00-4.00   sec  1.26 GBytes  10.8 Gbits/sec    0   3.45 MBytes       
+[  5]   4.00-5.00   sec  1.18 GBytes  10.2 Gbits/sec    0   3.45 MBytes       
+[  5]   5.00-6.00   sec  1.20 GBytes  10.3 Gbits/sec    0   3.64 MBytes       
+[  5]   6.00-7.00   sec  1.31 GBytes  11.2 Gbits/sec    0   3.68 MBytes       
+[  5]   7.00-8.00   sec  1.28 GBytes  11.0 Gbits/sec    0   3.84 MBytes       
+[  5]   8.00-9.00   sec  1.29 GBytes  11.1 Gbits/sec    0   3.84 MBytes       
+[  5]   9.00-10.00  sec  1.33 GBytes  11.4 Gbits/sec    0   3.84 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec  12.6 GBytes  10.8 Gbits/sec    0             sender
+[  5]   0.00-10.01  sec  12.6 GBytes  10.8 Gbits/sec                  receiver
+
+iperf Done.
+
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ 

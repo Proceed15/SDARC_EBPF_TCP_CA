@@ -1,0 +1,40 @@
+CaminhoDoUsuário/labs-ebpf$ ls -la ~/labs-ebpf/contador-ipv4
+total 71064
+drwxrwxrwx 4 jrlsf jrlsf     4096 Jun 22 16:47 .
+drwxrwxrwx 4 jrlsf jrlsf     4096 Jun 15 16:01 ..
+-rw-r--r-- 1 jrlsf jrlsf      342 Jun  8 16:03 A.txt
+-rw-r--r-- 1 jrlsf jrlsf     5798 Jun 22 17:20 ARENOResultadosIperf3EmEth0_22062026.txt
+-rw-r--r-- 1 jrlsf jrlsf     2015 Jun  8 15:38 AnotacoesSobreFuncionamento.txt
+-rw-r--r-- 1 jrlsf jrlsf     2038 Jun 22 16:47 AteCUBICTerminalDeConfiguracoes.txt
+-rw-r--r-- 1 jrlsf jrlsf     3013 Jun 22 17:13 AteRenoTerminalDeConfiguracoes.txt
+-rw-r--r-- 1 jrlsf jrlsf    12643 Jun 22 16:43 CUBICResultadosIperf3EmEth0_22062026.txt
+-rw-r--r-- 1 jrlsf jrlsf    11988 Jun 22 15:58 CUBICResultadosIperf3Emloopback_22062026.txt
+-rw-r--r-- 1 jrlsf jrlsf      443 Jun 22 17:08 ComandosDeTrocaReno
+-rw-r--r-- 1 jrlsf jrlsf     1150 Jun 14 23:38 ComandosGOemOrdem.txt
+-rw-r--r-- 1 jrlsf jrlsf      767 Jun 22 14:52 ComandosInstalacao_22062026
+-rw-r--r-- 1 jrlsf jrlsf     1390 Jun 22 16:48 ComandosIperf3_22062026.txt
+-rw-r--r-- 1 jrlsf jrlsf      237 Jun  9 00:19 ComandosParaTeste.txt
+-rw-r--r-- 1 jrlsf jrlsf      129 Jun  8 15:45 Comandos_bpftool_map.txt
+-rw-r--r-- 1 jrlsf jrlsf      689 Jun  8 16:13 DescobrirIdEVisualizarDados.txt
+-rw-r--r-- 1 jrlsf jrlsf       47 Jun  8 16:08 GarantirQueOProgramaEncerrouAposCrtlC,txt
+-rw-r--r-- 1 jrlsf jrlsf      688 Jun  8 15:29 Makefile
+-rw-r--r-- 1 jrlsf jrlsf      732 Jun  8 15:35 ResultadosComandosParaTeste.txt
+-rw-r--r-- 1 jrlsf jrlsf    19843 Jun 14 23:40 ResultadosGOemOrdem.txt
+-rw-r--r-- 1 jrlsf jrlsf      502 Jun  8 15:47 Resultados_Comandos_bpftool_map.txt
+drwxr-xr-x 2 jrlsf jrlsf     4096 Jun  8 16:19 Terminais08062026
+drwxr-xr-x 2 jrlsf jrlsf     4096 Jun  9 00:19 Terminais09062026
+-rw-r--r-- 1 jrlsf jrlsf      732 Jun 17 00:00 TesteBemSucedido.txt
+-rw-r--r-- 1 jrlsf jrlsf      330 Jun 14 23:42 TesteGOemFuncionamento.txt
+-rw-r--r-- 1 jrlsf jrlsf      566 Jun  8 16:10 TesteIPV4.txt
+-rw-r--r-- 1 jrlsf jrlsf      504 Jun  8 16:11 TesteIPV6.txt
+-rw-r--r-- 1 jrlsf jrlsf      118 Jun 14 23:34 go.mod
+-rw-r--r-- 1 jrlsf jrlsf     2229 Jun 14 23:34 go.sum
+-rw-r--r-- 1 jrlsf jrlsf 66861266 Jun  2 15:59 go1.26.4.linux-amd64.tar.gz
+-rwxr-xr-x 1 jrlsf jrlsf  5694568 Jun 16 23:59 loader-go
+-rw-r--r-- 1 jrlsf jrlsf     2375 Jun 14 23:15 loader.go
+-rw-r--r-- 1 jrlsf jrlsf      462 Jun  8 16:21 wsl-v.txt
+-rwxr-xr-x 1 jrlsf jrlsf    21904 Jun  8 15:32 xdp_loader
+-rw-r--r-- 1 jrlsf jrlsf     2526 Jun  8 15:28 xdp_loader.c
+-rw-r--r-- 1 jrlsf jrlsf     2868 Jun  9 00:11 xdp_prog_kernel.c
+-rw-r--r-- 1 jrlsf jrlsf     8176 Jun  8 15:59 xdp_prog_kernel.o
+CaminhoDoUsuário/labs-ebpf$ 

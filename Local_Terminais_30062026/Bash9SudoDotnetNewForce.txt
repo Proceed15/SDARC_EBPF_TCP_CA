@@ -1,0 +1,60 @@
+CaminhoDoUsuário/labs-ebpf$ cd tcp_atv_obs
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ cd TcpCongestionObservatory
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run
+[sudo] password for jrlsf: 
+
+Welcome to .NET 8.0!
+---------------------
+SDK Version: 8.0.128
+
+----------------
+Installed an ASP.NET Core HTTPS development certificate.
+To trust the certificate, view the instructions: https://aka.ms/dotnet-https-linux
+
+----------------
+Write your first app: https://aka.ms/dotnet-hello-world
+Find out what's new: https://aka.ms/dotnet-whats-new
+Explore documentation: https://aka.ms/dotnet-docs
+Report issues and find source on GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
+Couldn't find a project to run. Ensure a project exists in /home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory, or pass the path to the project using --project.
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ sudo dotnet run --project Program.cs
+MSBUILD : error MSB1009: Project file does not exist.
+Switch: Program.cs
+
+The build failed. Fix the build errors and run again.
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ dotnet new console --force
+The template "Console App" was created successfully.
+
+Processing post-creation actions...
+Restoring /home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/TcpCongestionObservatory.csproj:
+  Determining projects to restore...
+  Restored /home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/TcpCongestionObservatory.csproj (in 167 ms).
+Restore succeeded.
+
+
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory$ cd ..
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ // See https://aka.ms/new-console-template for more information //Console.WriteLine("Hello, World!");
+using System;
+using System.Runtime.InteropServices;
+using System.Threading;
+
+namespace TcpCongestionObservatory
+{
+    // Estruturas de memória mapeadas exatamente como no kernel (C)
+    [StructLayout(LayoutKind.Sequential)]
+    public struct FlowKey
+    {
+        public uint src_ip;
+        public uint dst_ip;
+        public ushort src_port;
+        public ushort dst_port;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct TcpMetrics
+    {
+        public uint snd_cwnd;
+                                                                                                                            ^C
+CaminhoDoUsuário/labs-ebpf/tcp_atv_obs$ 

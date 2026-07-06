@@ -1,0 +1,19 @@
+(base) ➜  tcp_atv_obs cp -r "/home/computacao/Área de trabalho/tcp_atv_obs" /tmp/
+cp: não foi possível obter estado de '/home/computacao/Área de trabalho/tcp_atv_obs': Arquivo ou diretório inexistente
+(base) ➜  tcp_atv_obs cp -r "/home/computacao/Área de Trabalho/tcp_atv_obs" /tmp/
+cp: não foi possível obter estado de '/home/computacao/Área de Trabalho/tcp_atv_obs': Arquivo ou diretório inexistente
+(base) ➜  tcp_atv_obs cp -r "/home/Pasta pessoal/Área de Trabalho/tcp_atv_obs" /tmp/ 
+cp: não foi possível obter estado de '/home/Pasta pessoal/Área de Trabalho/tcp_atv_obs': Arquivo ou diretório inexistente
+(base) ➜  tcp_atv_obs pwd
+/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs
+(base) ➜  tcp_atv_obs cp -r "/home/computacao/Área de trabalho/tcp_atv_obs./tcp_atv_obs" /tmp/
+(base) ➜  tcp_atv_obs cd /tmp/tcp_atv_obs/TcpCongestionObservatory
+(base) ➜  TcpCongestionObservatory sudo $(which dotnet) run
+[sudo] senha para computacao: 
+Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...
+------------------------------------------------------
+Mapa carregado com sucesso (FD: 37).
+Aguardando tráfego TCP (ex: iperf3) para exibir os dados...
+------------------------------------------------------
+^C%                                                                                                                                                                     
+(base) ➜  TcpCongestionObservatory 
