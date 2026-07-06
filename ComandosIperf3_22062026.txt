@@ -1,0 +1,24 @@
+iperf3 -s
+sudo killall iperf3
+iperf3 -s -p 5201
+# Obs.: O 5201 é a porta padrão, pode ser trocado por 5202 por exemplo, ficaria assim:
+# iperf3 -s -p 5202
+# Obs.: Para rodar no terminal do cliente precisa informar a porta nova, ficando assim:
+# iperf3 -c 127.0.0.1 -p 5202 -t 10
+iperf3 -c 127.0.0.1 -p 5201 -t 10
+sudo tc qdisc add dev lo root netem loss 2%
+sudo tc qdisc add dev lo root netem delay 500ms # Rodar sudo tc qdisc del dev lo root antes desse
+sudo sysctl net.ipv4.tcp_congestion_control=bbr
+sudo sysctl net.ipv4.tcp_congestion_control=cubic
+# Obs.: Reno vai ser mais lento que os protocolos acima!
+sudo sysctl net.ipv4.tcp_congestion_control=reno
+sysctl net.ipv4.tcp_congestion_control # resposta: net.ipv4.tcp_congestion_control = cubic
+sysctl net.ipv4.tcp_available_congestion_control # resposta: net.ipv4.tcp_available_congestion_control = reno cubic
+tc qdisc show dev lo
+ip -4 addr show eth0
+sudo tc qdisc del dev eth0 root
+sudo tc qdisc add dev eth0 root netem delay 500ms
+iperf3 -s -B SEU_IP -p 5202 # Ou iperf3 -s -B SEU_IP Escutando tudo do IP # Ou só iperf3 -s sem o endereço e escutando em todas as portas que consegue
+iperf3 -c SEU_IP -p 5202 -t 10 # Ou iperf3 -c SEU_IP -t 10 enviando para o endereço de IP sem a porta
+sudo tc qdisc add dev eth0 root netem loss 2% # Rodar sudo tc qdisc del dev eth0 root Antes!
+sudo sysctl net.ipv4.tcp_congestion_control=reno

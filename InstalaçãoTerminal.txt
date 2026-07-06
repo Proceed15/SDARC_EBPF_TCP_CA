@@ -1,0 +1,74 @@
+UserPath~labs-ebpf/tcp_atv_obs$ bpftool btf dump file /sys/kernel/btf/vmlinux format c > vmlinux.h
+WARNING: bpftool not found for kernel 6.6.87.2-microsoft
+
+  You may need to install the following packages for this specific kernel:
+    linux-tools-6.6.87.2-microsoft-standard-WSL2
+    linux-cloud-tools-6.6.87.2-microsoft-standard-WSL2
+
+  You may also want to install one of the following packages to keep up to date:
+    linux-tools-standard-WSL2
+    linux-cloud-tools-standard-WSL2
+UserPath~labs-ebpf/tcp_atv_obs$ sudo apt update
+[sudo] password for UserPath: 
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease 
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [777 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1030 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [258 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [180 kB]            
+Get:9 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [177 kB]           
+Get:10 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1655 kB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [44.8 kB]                  
+Get:12 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11.5 kB]
+Get:13 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1169 kB]                 
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [325 kB]                                    
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]                                  
+Get:16 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [228 kB]                                  
+Get:17 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [34.7 kB]                             
+Get:18 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1110 kB]                                 
+Get:19 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.2 kB]                               
+Get:20 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [23.9 kB]                           
+Get:21 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1048 kB]                               
+Get:22 http://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [251 kB]                                  
+Get:23 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [40.4 kB]                                 
+Get:24 http://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [9972 B]                                  
+Get:25 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]                                 
+Get:26 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5744 B]                                    
+Get:27 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]                               
+Get:28 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [238 kB]                                
+Get:29 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [35.3 kB]                               
+Get:30 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [8308 B]                                
+Fetched 9515 kB in 11s (828 kB/s)                                                                                         
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+63 packages can be upgraded. Run 'apt list --upgradable' to see them.
+UserPath~labs-ebpf/tcp_atv_obs$ sudo apt install -y bpftool
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package bpftool is a virtual package provided by:
+  linux-tools-common 6.8.0-124.124
+  linux-lowlatency-tools-common 6.8.0-31.31.1
+You should explicitly select one to install.
+
+E: Package 'bpftool' has no installation candidate
+UserPath~labs-ebpf/tcp_atv_obs$ sudo apt install -y linux-tools-common linux-tools-6.8.0-124-generic
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+linux-tools-common is already the newest version (6.8.0-124.124).
+linux-tools-6.8.0-124-generic is already the newest version (6.8.0-124.124).
+linux-tools-6.8.0-124-generic set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 63 not upgraded.
+UserPath~labs-ebpf/tcp_atv_obs$ sudo ln -sf /usr/lib/linux-tools/6.8.0-124-generic/bpftool /usr/local/bin/bpftool
+UserPath~labs-ebpf/tcp_atv_obs$ hash -r
+UserPath~labs-ebpf/tcp_atv_obs$ bpftool version
+bpftool v7.4.0
+using libbpf v1.4
+features:
+UserPath~labs-ebpf/tcp_atv_obs$ bpftool btf dump file /sys/kernel/btf/vmlinux format c > vmlinux.h
+UserPath~labs-ebpf/tcp_atv_obs$ ls -lh vmlinux.h
+-rw-r--r-- 1 UserPath UserPath 3.2M Jun 15 16:15 vmlinux.h

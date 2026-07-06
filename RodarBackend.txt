@@ -1,0 +1,1 @@
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
