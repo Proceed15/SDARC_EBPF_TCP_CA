@@ -1,0 +1,12 @@
+UserPath/labs-ebpf$ sysctl net.ipv4.tcp_congestion_control
+net.ipv4.tcp_congestion_control = cubic
+UserPath/labs-ebpf$ sudo sysctl net.ipv4.tcp_congestion_control=reno
+[sudo] password for jrlsf: 
+net.ipv4.tcp_congestion_control = reno
+UserPath/labs-ebpf$ sysctl net.ipv4.tcp_congestion_control
+net.ipv4.tcp_congestion_control = reno
+UserPath/labs-ebpf$ sudo sysctl net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_congestion_control = cubic
+UserPath/labs-ebpf$ sysctl net.ipv4.tcp_congestion_control
+net.ipv4.tcp_congestion_control = cubic
+UserPath/labs-ebpf$ 
