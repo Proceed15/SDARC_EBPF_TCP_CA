@@ -1,0 +1,128 @@
+using System;
+using System.Runtime.InteropServices;
+using System.Threading;
+
+namespace TcpCongestionObservatory
+{
+    // Estruturas de memória mapeadas exatamente como no kernel (C)
+    [StructLayout(LayoutKind.Sequential)]
+    public struct FlowKey
+    {
+        public uint src_ip;
+        public uint dst_ip;
+        public ushort src_port;
+        public ushort dst_port;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct TcpMetrics
+    {
+        public uint snd_cwnd;
+        public uint ssthresh;
+        public uint srtt;
+        public uint retransmissions;
+        public uint duplicate_acks;
+        public ulong bytes_acked;
+        public byte ca_state;
+        // Padding para alinhar os bytes exatamente como o compilador C faz no Kernel
+        private byte pad1, pad2, pad3, pad4, pad5, pad6, pad7; 
+    }
+
+    class Program
+    {
+        private const string LibBpf = "libbpf.so.1";
+
+        [DllImport(LibBpf, EntryPoint = "bpf_object__open_file")]
+        public static extern IntPtr BpfObjectOpenFile(string path, IntPtr opts);
+
+        [DllImport(LibBpf, EntryPoint = "bpf_object__load")]
+        public static extern int BpfObjectLoad(IntPtr obj);
+
+        [DllImport(LibBpf, EntryPoint = "bpf_object__find_map_by_name")]
+        public static extern IntPtr BpfObjectFindMapByName(IntPtr obj, string name);
+
+        [DllImport(LibBpf, EntryPoint = "bpf_map__fd")]
+        public static extern int BpfMapFd(IntPtr map);
+
+        // SOBRECARGA 1: Pega a PRIMEIRA chave passando IntPtr.Zero (Nulo)
+        [DllImport(LibBpf, EntryPoint = "bpf_map_get_next_key")]
+        public static extern int BpfMapGetFirstKey(int fd, IntPtr key, ref FlowKey nextKey);
+
+        // SOBRECARGA 2: Pega a PRÓXIMA chave passando a referência da chave atual
+        [DllImport(LibBpf, EntryPoint = "bpf_map_get_next_key")]
+        public static extern int BpfMapGetNextKey(int fd, ref FlowKey key, ref FlowKey nextKey);
+
+        [DllImport(LibBpf, EntryPoint = "bpf_map_lookup_elem")]
+        public static extern int BpfMapLookupElem(int fd, ref FlowKey key, ref TcpMetrics value);
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Iniciando o Observatório de Congestionamento TCP (eBPF) em C#...");
+
+            string bpfPath = "../tcp_co_kernel.o"; 
+
+            IntPtr bpfObject = BpfObjectOpenFile(bpfPath, IntPtr.Zero);
+            if (bpfObject == IntPtr.Zero)
+            {
+                Console.WriteLine($"Erro: Não foi possível abrir o arquivo BPF em {bpfPath}.");
+                return;
+            }
+
+            if (BpfObjectLoad(bpfObject) != 0)
+            {
+                Console.WriteLine("Erro: Falha ao carregar o BPF no kernel. Você executou com 'sudo'?");
+                return;
+            }
+
+            IntPtr mapPtr = BpfObjectFindMapByName(bpfObject, "tcp_metrics_map");
+            if (mapPtr == IntPtr.Zero)
+            {
+                Console.WriteLine("Erro: Mapa 'tcp_metrics_map' não encontrado no arquivo .o.");
+                return;
+            }
+
+            int mapFd = BpfMapFd(mapPtr);
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine($"Mapa carregado com sucesso (FD: {mapFd}).");
+            Console.WriteLine("Aguardando tráfego TCP (ex: iperf3) para exibir os dados...");
+            Console.WriteLine("------------------------------------------------------");
+
+            TcpMetrics metrics = new TcpMetrics();
+
+            // Laço de captura em tempo real
+            while (true)
+            {
+                FlowKey currentKey = new FlowKey();
+                FlowKey nextKey = new FlowKey();
+
+                // 1. Pede a PRIMEIRA chave do mapa
+                bool hasNext = BpfMapGetFirstKey(mapFd, IntPtr.Zero, ref nextKey) == 0;
+
+                // 2. Enquanto houver chaves válidas, itera sobre elas
+                while (hasNext)
+                {
+                    // Lê as métricas atreladas a esta chave
+                    if (BpfMapLookupElem(mapFd, ref nextKey, ref metrics) == 0)
+                    {
+                        // FILTRO EXCLUSIVO: Só processa se a porta de destino for 5202
+                        if (nextKey.dst_port == 5202)
+                        {
+                            // Exibe a conexão se a janela de congestionamento estiver ativa
+                            if (metrics.snd_cwnd > 0)
+                            {
+                                Console.WriteLine($"[{DateTime.Now:HH:mm:ss.fff}] [IPERF] Porta {nextKey.src_port,5} -> {nextKey.dst_port,5} | Cwnd: {metrics.snd_cwnd,5} | Retr: {metrics.retransmissions,3} | RTT: {metrics.srtt}us");
+                            }
+                        }
+                    }
+
+                    // 3. Avança o ponteiro: passa a chave atual para descobrir qual é a próxima
+                    currentKey = nextKey;
+                    hasNext = BpfMapGetNextKey(mapFd, ref currentKey, ref nextKey) == 0;
+                }
+                
+                // Dorme por 50ms para capturar as flutuações rápidas do algoritmo
+                Thread.Sleep(50); 
+            }
+        }
+    }
+}

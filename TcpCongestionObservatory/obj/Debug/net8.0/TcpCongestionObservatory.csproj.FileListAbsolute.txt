@@ -1,0 +1,14 @@
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory.deps.json
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory.runtimeconfig.json
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory.dll
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/bin/Debug/net8.0/TcpCongestionObservatory.pdb
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/obj/Debug/net8.0/TcpCongestionObservatory.GeneratedMSBuildEditorConfig.editorconfig
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/obj/Debug/net8.0/TcpCongestionObservatory.AssemblyInfoInputs.cache
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/obj/Debug/net8.0/TcpCongestionObservatory.AssemblyInfo.cs
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/obj/Debug/net8.0/TcpCongestionObservatory.csproj.CoreCompileInputs.cache
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/obj/Debug/net8.0/TcpCongestionObservatory.dll
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/obj/Debug/net8.0/refint/TcpCongestionObservatory.dll
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/obj/Debug/net8.0/TcpCongestionObservatory.pdb
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/obj/Debug/net8.0/TcpCongestionObservatory.genruntimeconfig.cache
+/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/obj/Debug/net8.0/ref/TcpCongestionObservatory.dll
