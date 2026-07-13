@@ -1,0 +1,43 @@
+Vamos dividir a explicação em duas partes: o "De/Para" das métricas e o segredo do estado de congestionamento.
+1. 
+O Mapa das Métricas (O De/Para do Kernel)No Linux, as informações de uma conexão não ficam todas no mesmo lugar. 
+Elas estão espalhadas em três "camadas" de estruturas (structs) na memória:struct sock (sk): 
+Informações básicas do socket (serve para TCP, UDP, etc).
+struct inet_connection_sock (icsk): 
+Informações específicas para conexões com estado e controle de tráfego.struct tcp_sock (ts): 
+O "coração" do TCP, onde mora o algoritmo de congestionamento.
+Veja como fomos buscar as métricas exigidas a cada uma delas usando a 
+função BPF_CORE_READ (que lê a memória do Kernel de forma segura): snd_cwnd: Lemos de ts->snd_cwnd. 
+É a Janela de Congestionamento (em pacotes).snd_ssthresh: Lemos de ts->snd_ssthresh. 
+É o limiar do Slow Start.srtt_us: Lemos de ts->srtt_us. 
+Detalhe técnico para Citar: O Linux guarda esse valor deslocado em 3 bits (para otimizar cálculos matemáticos sem usar números quebrados). 
+Por isso, no código, nós fazemos BPF_CORE_READ(ts, srtt_us) >> 3 para devolver o valor real em microssegundos ($\mu s$).packets_out: 
+Lemos de ts->packets_out. Pacotes atualmente em voo pela rede.retrans_out: Lemos de ts->retrans_out. 
+Pacotes retransmitidos e ainda não confirmados.total_retrans: Lemos de ts->total_retrans. 
+O contador histórico total de retransmissões.bytes_acked: Lemos de ts->bytes_acked. 
+Total de bytes confirmados pelo recetor.sndbuf: Lemos de sk->sk_sndbuf. 
+O tamanho total alocado para o buffer de envio na camada do socket.estado TCP: 
+Lemos de sk->__sk_common.skc_state. É um número inteiro (ex: 1 significa TCP_ESTABLISHED).algoritmo de congestionamento: 
+Lemos de icsk->icsk_ca_ops->name. Como é um texto (string) de 16 caracteres, 
+tivemos que usar BPF_CORE_READ_INTO para copiar as letras de forma segura para a nossa variável ca_name.
+2. 
+O Bônus: Como recuperamos os 5 estados do icsk_ca_state?O campo icsk_ca_state (dentro da estrutura inet_connection_sock) 
+é onde o Kernel do Linux guarda a "Máquina de Estados de Congestionamento" do TCP.O detalhe técnico: 
+No Kernel, este campo não é um número normal, é um bitfield (um campo exprimido para ocupar apenas alguns bits e poupar RAM). 
+Por isso, no nosso código eBPF, nós usamos uma macro especial: BPF_CORE_READ_BITFIELD_PROBED(icsk, icsk_ca_state).
+Ele nos devolve um número de 0 a 4. E é exatamente esse número que representa os 5 estados que foi exigido! 
+A tabela de conversão oficial do Linux (que você pode mostrar na apresentação) é esta:0 = TCP_CA_Open (Open): 
+É o estado normal e feliz do TCP. Tráfego a fluir rapidamente, sem problemas na rede.
+1 = TCP_CA_Disorder (Disorder): 
+O TCP recebeu pacotes fora de ordem (alguns ACKs Duplicados), 
+mas ainda não atingiu o limite de 3 ACKs Duplicados para considerar que o pacote foi perdido. Ele entra em "estado de alerta".
+2 = TCP_CA_CWR (Congestion Window Reduced):
+O receptor (ou um router no meio do caminho) enviou um aviso explícito de congestionamento (bandeira ECN ligada). 
+O TCP reduz a janela proativamente antes que ocorram perdas de pacotes.3 = TCP_CA_Recovery (Recovery): 
+Aconteceu o temido "Fast Retransmit" (3 ACKs Duplicados). 
+O TCP tem a certeza de que um pacote foi perdido na rede e entra no estado de recuperação para retransmiti-lo.
+4 = TCP_CA_Loss (Loss): O pior cenário possível. O tempo limite (Timeout/RTO) estourou, o que significa que nem os ACKs duplicados chegaram. 
+A rede parou completamente. A janela cai para 1 pacote e o TCP recomeça do zero (Slow Start).
+Como usamos isso no nosso projeto?O nosso código em C (Backend) extrai esse número (0, 1, 2, 3 ou 4) e envia no JSON. 
+Visualização em um simples "dicionário de tradução" no Python:
+dicionario_estado = {0: 'Open', 1: 'Disorder', 2: 'CWR', 3: 'Recovery', 4: 'Loss'}.
