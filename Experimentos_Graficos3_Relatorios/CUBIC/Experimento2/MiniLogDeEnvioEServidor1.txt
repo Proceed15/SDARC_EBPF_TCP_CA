@@ -1,0 +1,173 @@
+Envio:
+labs-ebpf/tcp_atv_obs$ iperf3 -c MeuIPLocal -p 5202 -t 30
+Connecting to host MeuIPLocal, port 5202
+[  5] local MeuIPLocal port 47702 connected to MeuIPLocal port 5202
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  3.25 GBytes  27.9 Gbits/sec  780    512 KBytes       
+[  5]   1.00-2.00   sec  1.14 GBytes  9.80 Gbits/sec  272    128 KBytes       
+[  5]   2.00-3.00   sec  2.33 GBytes  20.0 Gbits/sec  611    448 KBytes       
+[  5]   3.00-4.00   sec   920 MBytes  7.72 Gbits/sec  206    128 KBytes       
+[  5]   4.00-5.00   sec  1.63 GBytes  14.0 Gbits/sec  394    831 KBytes       
+[  5]   5.00-6.00   sec  2.15 GBytes  18.5 Gbits/sec  534    512 KBytes       
+[  5]   6.00-7.00   sec  2.15 GBytes  18.4 Gbits/sec  532    256 KBytes       
+[  5]   7.00-8.00   sec  2.20 GBytes  18.9 Gbits/sec  494    703 KBytes       
+[  5]   8.00-9.00   sec  2.23 GBytes  19.2 Gbits/sec  554    192 KBytes       
+[  5]   9.00-10.00  sec  2.28 GBytes  19.6 Gbits/sec  544    128 KBytes       
+[  5]  10.00-11.00  sec  1.71 GBytes  14.7 Gbits/sec  458    576 KBytes       
+[  5]  11.00-12.00  sec  2.43 GBytes  20.9 Gbits/sec  596    128 KBytes       
+[  5]  12.00-13.00  sec  1.17 GBytes  10.1 Gbits/sec  296   63.9 KBytes       
+[  5]  13.00-14.00  sec  1.86 GBytes  16.0 Gbits/sec  428    448 KBytes       
+[  5]  14.00-15.00  sec  1.86 GBytes  16.0 Gbits/sec  512    192 KBytes       
+[  5]  15.00-16.00  sec  2.80 GBytes  24.0 Gbits/sec  631    448 KBytes       
+[  5]  16.00-17.00  sec  2.00 GBytes  17.2 Gbits/sec  489   63.9 KBytes       
+[  5]  17.00-18.00  sec  1.94 GBytes  16.7 Gbits/sec  481    576 KBytes       
+[  5]  18.00-19.00  sec  1.72 GBytes  14.8 Gbits/sec  429   63.9 KBytes       
+[  5]  19.00-20.00  sec  0.00 Bytes  0.00 bits/sec    1   63.9 KBytes       
+[  5]  20.00-21.00  sec  2.07 GBytes  17.8 Gbits/sec  480    320 KBytes       
+[  5]  21.00-22.00  sec  2.43 GBytes  20.8 Gbits/sec  558    895 KBytes       
+[  5]  22.00-23.00  sec  2.92 GBytes  25.1 Gbits/sec  731    320 KBytes       
+[  5]  23.00-24.00  sec  1.69 GBytes  14.5 Gbits/sec  413    256 KBytes       
+[  5]  24.00-25.00  sec   979 MBytes  8.21 Gbits/sec  242    128 KBytes       
+[  5]  25.00-26.00  sec  2.26 GBytes  19.4 Gbits/sec  503    128 KBytes       
+[  5]  26.00-27.00  sec  1.61 GBytes  13.9 Gbits/sec  383    192 KBytes       
+[  5]  27.00-28.00  sec  1.98 GBytes  17.0 Gbits/sec  485    320 KBytes       
+[  5]  28.00-29.00  sec  2.43 GBytes  20.8 Gbits/sec  593    256 KBytes       
+[  5]  29.00-30.00  sec  2.24 GBytes  19.3 Gbits/sec  540    448 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-30.00  sec  58.4 GBytes  16.7 Gbits/sec  14170             sender
+[  5]   0.00-30.00  sec  58.4 GBytes  16.7 Gbits/sec                  receiver
+
+iperf Done.
+
+labs-ebpf/tcp_atv_obs$ iperf3 -c MeuIPLocal -p 5202 -t 30
+Connecting to host MeuIPLocal, port 5202
+[  5] local MeuIPLocal port 45128 connected to MeuIPLocal port 5202
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  1.85 GBytes  15.9 Gbits/sec  455    576 KBytes       
+[  5]   1.00-2.00   sec  1.13 GBytes  9.66 Gbits/sec  282    384 KBytes       
+[  5]   2.00-3.00   sec  1.91 GBytes  16.4 Gbits/sec  443    128 KBytes       
+[  5]   3.00-4.00   sec  1.70 GBytes  14.6 Gbits/sec  442   63.9 KBytes       
+[  5]   4.00-5.00   sec  2.96 GBytes  25.4 Gbits/sec  720   63.9 KBytes       
+[  5]   5.00-6.00   sec  2.57 GBytes  22.0 Gbits/sec  612   63.9 KBytes       
+[  5]   6.00-7.00   sec  1.31 GBytes  11.2 Gbits/sec  360   63.9 KBytes       
+[  5]   7.00-8.00   sec  1.94 GBytes  16.7 Gbits/sec  481    128 KBytes       
+[  5]   8.00-9.00   sec  1.84 GBytes  15.8 Gbits/sec  464    384 KBytes       
+[  5]   9.00-10.00  sec  2.39 GBytes  20.6 Gbits/sec  549    128 KBytes       
+[  5]  10.00-11.00  sec  1.62 GBytes  13.9 Gbits/sec  417   63.9 KBytes       
+[  5]  11.00-12.00  sec  1.53 GBytes  13.1 Gbits/sec  336    128 KBytes       
+[  5]  12.00-13.00  sec  1.65 GBytes  14.2 Gbits/sec  440    384 KBytes       
+[  5]  13.00-14.00  sec  2.54 GBytes  21.8 Gbits/sec  630   63.9 KBytes       
+[  5]  14.00-15.00  sec  2.48 GBytes  21.3 Gbits/sec  644    703 KBytes       
+[  5]  15.00-16.00  sec  2.28 GBytes  19.6 Gbits/sec  554    320 KBytes       
+[  5]  16.00-17.00  sec  1.36 GBytes  11.7 Gbits/sec  329    128 KBytes       
+[  5]  17.00-18.00  sec  3.28 GBytes  28.2 Gbits/sec  777    448 KBytes       
+[  5]  18.00-19.00  sec  2.10 GBytes  18.0 Gbits/sec  493    128 KBytes       
+[  5]  19.00-20.00  sec  2.34 GBytes  20.1 Gbits/sec  568    767 KBytes       
+[  5]  20.00-21.00  sec  1.45 GBytes  12.5 Gbits/sec  304   63.9 KBytes       
+[  5]  21.00-22.00  sec  2.28 GBytes  19.6 Gbits/sec  553    576 KBytes       
+[  5]  22.00-23.00  sec  1.61 GBytes  13.8 Gbits/sec  403    448 KBytes       
+[  5]  23.00-24.00  sec  2.78 GBytes  23.8 Gbits/sec  659    320 KBytes       
+[  5]  24.00-25.00  sec  2.09 GBytes  17.9 Gbits/sec  481    512 KBytes       
+[  5]  25.00-26.00  sec  2.36 GBytes  20.2 Gbits/sec  574    703 KBytes       
+[  5]  26.00-27.00  sec  2.03 GBytes  17.4 Gbits/sec  504   63.9 KBytes       
+[  5]  27.00-28.00  sec  2.27 GBytes  19.5 Gbits/sec  555    512 KBytes       
+[  5]  28.00-29.00  sec  2.15 GBytes  18.4 Gbits/sec  549    576 KBytes       
+[  5]  29.00-30.00  sec  1.33 GBytes  11.4 Gbits/sec  321    128 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-30.00  sec  61.2 GBytes  17.5 Gbits/sec  14899             sender
+[  5]   0.00-30.00  sec  61.2 GBytes  17.5 Gbits/sec                  receiver
+
+iperf Done.
+Servidor:
+labs-ebpf/tcp_atv_obs$ iperf3 -s -p 5202
+-----------------------------------------------------------
+Server listening on 5202 (test #1)
+-----------------------------------------------------------
+Accepted connection from MeuIPLocal, port 47696
+[  5] local MeuIPLocal port 5202 connected to MeuIPLocal port 47702
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  3.25 GBytes  27.9 Gbits/sec                  
+[  5]   1.00-2.00   sec  1.17 GBytes  10.0 Gbits/sec                  
+[  5]   2.00-3.00   sec  2.33 GBytes  20.0 Gbits/sec                  
+[  5]   3.00-4.00   sec   919 MBytes  7.71 Gbits/sec                  
+[  5]   4.00-5.00   sec  1.63 GBytes  14.0 Gbits/sec                  
+[  5]   5.00-6.00   sec  2.16 GBytes  18.5 Gbits/sec                  
+[  5]   6.00-7.00   sec  2.16 GBytes  18.5 Gbits/sec                  
+[  5]   7.00-8.00   sec  2.21 GBytes  19.0 Gbits/sec                  
+[  5]   8.00-9.00   sec  2.23 GBytes  19.2 Gbits/sec                  
+[  5]   9.00-10.00  sec  2.28 GBytes  19.6 Gbits/sec                  
+[  5]  10.00-11.00  sec  1.71 GBytes  14.7 Gbits/sec                  
+[  5]  11.00-12.00  sec  2.43 GBytes  20.9 Gbits/sec                  
+[  5]  12.00-13.00  sec  1.17 GBytes  10.1 Gbits/sec                  
+[  5]  13.00-14.00  sec  1.86 GBytes  16.0 Gbits/sec                  
+[  5]  14.00-15.00  sec  1.86 GBytes  16.0 Gbits/sec                  
+[  5]  15.00-16.00  sec  2.79 GBytes  24.0 Gbits/sec                  
+[  5]  16.00-17.00  sec  2.02 GBytes  17.3 Gbits/sec                  
+[  5]  17.00-18.00  sec  1.95 GBytes  16.7 Gbits/sec                  
+[  5]  18.00-19.00  sec  1.72 GBytes  14.8 Gbits/sec                  
+[  5]  19.00-20.00  sec  0.00 Bytes  0.00 bits/sec                  
+[  5]  20.00-21.00  sec  2.07 GBytes  17.8 Gbits/sec                  
+[  5]  21.00-22.00  sec  2.43 GBytes  20.9 Gbits/sec                  
+[  5]  22.00-23.00  sec  2.94 GBytes  25.3 Gbits/sec                  
+[  5]  23.00-24.00  sec  1.69 GBytes  14.5 Gbits/sec                  
+[  5]  24.00-25.00  sec   978 MBytes  8.21 Gbits/sec                  
+[  5]  25.00-26.00  sec  2.26 GBytes  19.4 Gbits/sec                  
+[  5]  26.00-27.00  sec  1.61 GBytes  13.9 Gbits/sec                  
+[  5]  27.00-28.00  sec  1.98 GBytes  17.0 Gbits/sec                  
+[  5]  28.00-29.00  sec  2.43 GBytes  20.8 Gbits/sec                  
+[  5]  29.00-30.00  sec  2.25 GBytes  19.3 Gbits/sec                  
+[  5]  30.00-30.00  sec  2.00 MBytes  16.8 Gbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-30.00  sec  58.4 GBytes  16.7 Gbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5202 (test #2)
+-----------------------------------------------------------
+^Ciperf3: interrupt - the server has terminated
+labs-ebpf/tcp_atv_obs$ iperf3 -s -p 5202
+-----------------------------------------------------------
+Server listening on 5202 (test #1)
+-----------------------------------------------------------
+Accepted connection from MeuIPLocal, port 45118
+[  5] local MeuIPLocal port 5202 connected to MeuIPLocal port 45128
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  1.85 GBytes  15.9 Gbits/sec                  
+[  5]   1.00-2.00   sec  1.12 GBytes  9.66 Gbits/sec                  
+[  5]   2.00-3.00   sec  1.91 GBytes  16.4 Gbits/sec                  
+[  5]   3.00-4.00   sec  1.70 GBytes  14.6 Gbits/sec                  
+[  5]   4.00-5.00   sec  2.96 GBytes  25.4 Gbits/sec                  
+[  5]   5.00-6.00   sec  2.57 GBytes  22.0 Gbits/sec                  
+[  5]   6.00-7.00   sec  1.31 GBytes  11.2 Gbits/sec                  
+[  5]   7.00-8.00   sec  1.94 GBytes  16.7 Gbits/sec                  
+[  5]   8.00-9.00   sec  1.85 GBytes  15.9 Gbits/sec                  
+[  5]   9.00-10.00  sec  2.39 GBytes  20.5 Gbits/sec                  
+[  5]  10.00-11.00  sec  1.61 GBytes  13.9 Gbits/sec                  
+[  5]  11.00-12.00  sec  1.53 GBytes  13.1 Gbits/sec                  
+[  5]  12.00-13.00  sec  1.65 GBytes  14.2 Gbits/sec                  
+[  5]  13.00-14.00  sec  2.54 GBytes  21.8 Gbits/sec                  
+[  5]  14.00-15.00  sec  2.48 GBytes  21.3 Gbits/sec                  
+[  5]  15.00-16.00  sec  2.29 GBytes  19.7 Gbits/sec                  
+[  5]  16.00-17.00  sec  1.36 GBytes  11.7 Gbits/sec                  
+[  5]  17.00-18.00  sec  3.29 GBytes  28.3 Gbits/sec                  
+[  5]  18.00-19.00  sec  2.12 GBytes  18.2 Gbits/sec                  
+[  5]  19.00-20.00  sec  2.34 GBytes  20.1 Gbits/sec                  
+[  5]  20.00-21.00  sec  1.47 GBytes  12.6 Gbits/sec                  
+[  5]  21.00-22.00  sec  2.28 GBytes  19.6 Gbits/sec                  
+[  5]  22.00-23.00  sec  1.61 GBytes  13.8 Gbits/sec                  
+[  5]  23.00-24.00  sec  2.78 GBytes  23.9 Gbits/sec                  
+[  5]  24.00-25.00  sec  2.09 GBytes  17.9 Gbits/sec                  
+[  5]  25.00-26.00  sec  2.36 GBytes  20.2 Gbits/sec                  
+[  5]  26.00-27.00  sec  2.02 GBytes  17.4 Gbits/sec                  
+[  5]  27.00-28.00  sec  2.27 GBytes  19.5 Gbits/sec                  
+[  5]  28.00-29.00  sec  2.16 GBytes  18.5 Gbits/sec                  
+[  5]  29.00-30.00  sec  1.33 GBytes  11.4 Gbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-30.00  sec  61.2 GBytes  17.5 Gbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5202 (test #2)
+-----------------------------------------------------------
+
+^Ciperf3: interrupt - the server has terminated
