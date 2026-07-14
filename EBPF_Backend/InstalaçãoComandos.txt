@@ -1,0 +1,15 @@
+Lista de Comandos:
+mkdir ~/labs-ebpf/tcp_atv_obs
+# Esse caso não tenha executado o que veio antes: mkdir -p ~/labs-ebpf/tcp_atv_obs
+cd ~/labs-ebpf/tcp_atv_obs
+sudo apt update
+sudo apt install -y linux-tools-common linux-tools-6.8.0-124-generic
+sudo ln -sf /usr/lib/linux-tools/6.8.0-124-generic/bpftool /usr/local/bin/bpftool
+hash -r
+bpftool version
+bpftool btf dump file /sys/kernel/btf/vmlinux format c > vmlinux.h
+ls -lh vmlinux.h
+clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+sudo apt update
+sudo apt install -y iperf3
+

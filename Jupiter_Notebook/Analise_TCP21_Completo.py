@@ -1,8 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python Arquivo quecontém todas as células do Jupiter Notebook! Utilizar uma de cada Vez! Criar seu próprio notebook para obter um histórico de dados!
 # coding: utf-8
-
 # In[26]:
-
 
 import requests
 import pandas as pd
@@ -10,14 +8,14 @@ import matplotlib.pyplot as plt
 import time
 from datetime import datetime
 
-PORTA_ALVO = 5202 
+PORTA_ALVO = 5202 # Defina sua Porta aqui
 TEMPO_COLETA_SEGUNDOS = 30
 URL_API = "http://localhost:8080/api/json"
 
 historico_dados = []
 
-print(f"📡 Iniciando captura completa na porta {PORTA_ALVO} por {TEMPO_COLETA_SEGUNDOS} segundos...")
-print("⚠️ Dispare o iperf3 em outro terminal AGORA: iperf3 -c SEU_IP_REAL -p 5202 -t 30 -4")
+print(f"Iniciando captura completa na porta {PORTA_ALVO} por {TEMPO_COLETA_SEGUNDOS} segundos...")
+print("Dispare o iperf3 em outro terminal AGORA: iperf3 -c SEU_IP_REAL -p 5202 -t 30 -4")
 
 for i in range(TEMPO_COLETA_SEGUNDOS):
     try:

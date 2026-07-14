@@ -1,6 +1,0 @@
-Por que dois algoritmos diferentes se comportaram de forma idêntica? 
-Essa é uma resposta de ouro para o seu relatório final: Eles não tiveram a chance de ser diferentes.
-Tanto o Reno quanto o CUBIC compartilham exatamente a mesma lógica para a fase inicial da conexão, 
-chamada de Slow Start (onde a janela dobra a cada ACK recebido). 
-Eles só divergem quando entram na fase de Congestion Avoidance (Evitar Congestionamento), 
-e essa transição só ocorre quando o algoritmo atinge o limite do ssthresh ou quando sofre uma perda de pacote.

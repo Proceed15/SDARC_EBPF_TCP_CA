@@ -6,7 +6,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 HOST = '0.0.0.0'
 PORT = 8080
 
-# 🎯 NOVO: Filtro direto no Backend para acelerar a API!
+# NOVO: Filtro direto no Backend para acelerar a API!
 # Mude para 0 se quiser capturar TODAS as portas novamente.
 PORTA_FILTRO = 5202 
 

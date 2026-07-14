@@ -1,8 +1,0 @@
-{
-  "version": 2,
-  "dgSpecHash": "PEo0+sKmPEjgE7PPJkvCVlruRiP7wPVUwTXtenfDd6ehLYmt8NUeqqJTgjCDuWiB4c8pzIv2NMcKIwUaKw8iGA==",
-  "success": true,
-  "projectFilePath": "/home/jrlsf/labs-ebpf/tcp_atv_obs/TcpCongestionObservatory/TcpCongestionObservatory.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
-}
