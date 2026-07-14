@@ -1,0 +1,100 @@
+UserPath/UserEnds$ python3 Analise_TCP.ipynb
+Traceback (most recent call last):
+  File "/home/jrlsf/UserEnds/Analise_TCP.ipynb", line 146, in <module>
+    "execution_count": null,
+                       ^^^^
+NameError: name 'null' is not defined
+UserPath/UserEnds$ python3 tcp_exporter.py
+🚀 Observatório Blindado (com Descodificador C) iniciado!
+📊 Grafana/Prometheus : http://localhost:8080/metrics
+📓 Jupyter / JSON     : http://localhost:8080/api/json
+Pressione Ctrl+C para parar...
+[sudo] password for jrlsf: 
+127.0.0.1 - - [08/Jul/2026 13:55:17] "GET /api/json HTTP/1.1" 200 -
+[sudo] password for jrlsf: 
+127.0.0.1 - - [08/Jul/2026 14:31:37] "GET /metrics HTTP/1.1" 200 -
+^C
+Servidor encerrado.
+UserPath/UserEnds$ python3 tcp_exporter.py
+🚀 Observatório Blindado iniciado!
+🎯 FILTRO ATIVO: Porta 5202
+📊 Grafana/Prometheus : http://localhost:8080/metrics
+📓 Jupyter / JSON     : http://localhost:8080/api/json
+Pressione Ctrl+C para parar...
+[sudo] password for jrlsf: 
+127.0.0.1 - - [08/Jul/2026 16:57:13] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 16:57:19] "GET /metrics HTTP/1.1" 200 -
+^C
+Servidor encerrado.
+UserPath/UserEnds$ python3 tcp_exporter.py
+🚀 Observatório Blindado iniciado!
+🎯 FILTRO ATIVO: Porta 5202
+📊 Grafana/Prometheus : http://localhost:8080/metrics
+📓 Jupyter / JSON     : http://localhost:8080/api/json
+Pressione Ctrl+C para parar...
+[sudo] password for jrlsf: 
+127.0.0.1 - - [08/Jul/2026 17:54:46] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:47] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:49] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:50] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:51] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:52] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:53] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:54] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:55] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:56] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:57] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:58] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:54:59] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:00] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:01] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:02] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:07] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:08] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:09] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:10] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:11] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:12] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:13] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:14] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:15] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:16] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:17] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:18] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:19] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:55:20] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:46] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:47] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:51] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:52] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:53] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:54] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:55] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:56] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:57] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:58] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:56:59] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:00] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:01] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:02] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:03] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:04] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:05] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:06] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:07] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:08] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:09] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:10] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:11] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:12] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:13] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:14] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:15] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:16] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:17] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:57:18] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [08/Jul/2026 17:59:42] "GET /api/json HTTP/1.1" 200 -
+^C
+Servidor encerrado.
+
+UserPath/UserEnds$ 

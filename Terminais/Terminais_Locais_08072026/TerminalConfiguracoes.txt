@@ -1,0 +1,342 @@
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ hostname -I
+186.219.91.26 2801:b0:b0:300:9650:b6f1:51d3:ce64 2801:b0:b0:300:e09d:4380:5553:5421 
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo rm -rf /sys/fs/bpf/tcp_obs
+[sudo] password for jrlsf: 
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo mount -t bpf none /sys/fs/bpf
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo bpftool prog loadall tcp_co_kernel.o /sys/fs/bpf/tcp_obs autoattach
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 45198,
+            "dst_port": 45629
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 369,
+            "srtt": 3260,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 17700987,
+            "ca_state": 0
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 45190,
+            "dst_port": 45629
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 8033,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 492177,
+            "ca_state": 0
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 45629,
+            "dst_port": 45198
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 382,
+            "srtt": 15470,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 8096652,
+            "ca_state": 0
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 45629,
+            "dst_port": 45190
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 622,
+            "srtt": 5813,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 19984488,
+            "ca_state": 0
+        }
+    }
+]
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ tc qdisc show dev lo
+qdisc noqueue 0: root refcnt 2 
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo rm -rf /sys/fs/bpf/tcp_obs
+[sudo] password for jrlsf: 
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+tcp_co_kernel.c:82:66: error: nested builtin_preserve_access_index() not supported
+   82 |     bpf_core_read_str(&metrics.ca_name, sizeof(metrics.ca_name), BPF_CORE_READ(icsk, icsk_ca_ops, name));
+      |                                                                  ^
+/usr/include/bpf/bpf_core_read.h:444:2: note: expanded from macro 'BPF_CORE_READ'
+  444 |         BPF_CORE_READ_INTO(&__r, (src), a, ##__VA_ARGS__);                  \
+      |         ^
+/usr/include/bpf/bpf_core_read.h:351:30: note: expanded from macro 'BPF_CORE_READ_INTO'
+  351 |         ___core_read(bpf_core_read, bpf_core_read,                          \
+      |                                     ^
+tcp_co_kernel.c:82:66: error: nested builtin_preserve_access_index() not supported
+/usr/include/bpf/bpf_core_read.h:444:2: note: expanded from macro 'BPF_CORE_READ'
+  444 |         BPF_CORE_READ_INTO(&__r, (src), a, ##__VA_ARGS__);                  \
+      |         ^
+/usr/include/bpf/bpf_core_read.h:351:15: note: expanded from macro 'BPF_CORE_READ_INTO'
+  351 |         ___core_read(bpf_core_read, bpf_core_read,                          \
+      |                      ^
+2 errors generated.
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+tcp_co_kernel.c:82:32: warning: initializing 'struct tcp_congestion_ops *' with an expression of type 'typeof ((icsk)->icsk_ca_ops)' (aka 'const struct tcp_congestion_ops *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+   82 |     struct tcp_congestion_ops *ca_ops = BPF_CORE_READ(icsk, icsk_ca_ops);
+      |                                ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo mount -t bpf none /sys/fs/bpf
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo bpftool prog loadall tcp_co_kernel.o /sys/fs/bpf/tcp_obs autoattach
+libbpf: prog 'kprobe_tcp_ack': BPF program load failed: Permission denied
+libbpf: prog 'kprobe_tcp_ack': -- BEGIN PROG LOAD LOG --
+0: R1=ctx(off=0,imm=0) R10=fp0
+; int BPF_KPROBE(kprobe_tcp_ack, struct sock *sk)
+0: (79) r6 = *(u64 *)(r1 +112)        ; R1=ctx(off=0,imm=0) R6_w=scalar()
+1: (b7) r1 = 16                       ; R1_w=16
+2: (bf) r3 = r6                       ; R3_w=scalar(id=1) R6_w=scalar(id=1)
+3: (0f) r3 += r1                      ; R1_w=16 R3_w=scalar()
+4: (bf) r1 = r10                      ; R1_w=fp0 R10=fp0
+; 
+5: (07) r1 += -88                     ; R1_w=fp-88
+; u16 family = BPF_CORE_READ(sk, __sk_common.skc_family);
+6: (b7) r2 = 2                        ; R2_w=2
+7: (85) call bpf_probe_read_kernel#113        ; R0_w=scalar() fp-88=??????mm
+; u16 family = BPF_CORE_READ(sk, __sk_common.skc_family);
+8: (69) r1 = *(u16 *)(r10 -88)        ; R1_w=scalar(umax=65535,var_off=(0x0; 0xffff)) R10=fp0 fp-88=??????mm
+; if (family != AF_INET) {
+9: (55) if r1 != 0x2 goto pc+164      ; R1_w=2
+10: (b7) r7 = 0                       ; R7_w=0
+; struct flow_key key = {};
+11: (63) *(u32 *)(r10 -8) = r7        ; R7_w=0 R10=fp0 fp-8=????0000
+12: (7b) *(u64 *)(r10 -16) = r7       ; R7_w=0 R10=fp0 fp-16_w=00000000
+13: (b7) r1 = 4                       ; R1_w=4
+14: (bf) r3 = r6                      ; R3_w=scalar(id=1) R6_w=scalar(id=1)
+15: (0f) r3 += r1                     ; R1_w=4 R3_w=scalar()
+16: (bf) r1 = r10                     ; R1_w=fp0 R10=fp0
+17: (07) r1 += -16                    ; R1_w=fp-16
+; key.src_ip = BPF_CORE_READ(sk, __sk_common.skc_rcv_saddr);
+18: (b7) r2 = 4                       ; R2_w=4
+19: (85) call bpf_probe_read_kernel#113       ; R0=scalar() fp-16=0000mmmm
+20: (b7) r1 = 0                       ; R1_w=0
+21: (bf) r3 = r6                      ; R3_w=scalar(id=1) R6=scalar(id=1)
+22: (0f) r3 += r1                     ; R1_w=0 R3_w=scalar()
+23: (bf) r1 = r10                     ; R1_w=fp0 R10=fp0
+; struct flow_key key = {};
+24: (07) r1 += -88                    ; R1_w=fp-88
+; key.dst_ip = BPF_CORE_READ(sk, __sk_common.skc_daddr);
+25: (b7) r2 = 4                       ; R2_w=4
+26: (85) call bpf_probe_read_kernel#113       ; R0_w=scalar() fp-88=????mmmm
+; key.dst_ip = BPF_CORE_READ(sk, __sk_common.skc_daddr);
+27: (61) r1 = *(u32 *)(r10 -88)       ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-88=????mmmm
+; key.dst_ip = BPF_CORE_READ(sk, __sk_common.skc_daddr);
+28: (63) *(u32 *)(r10 -12) = r1       ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-16=mmmmmmmm
+29: (b7) r1 = 14                      ; R1_w=14
+30: (bf) r3 = r6                      ; R3_w=scalar(id=1) R6=scalar(id=1)
+31: (0f) r3 += r1                     ; R1_w=14 R3_w=scalar()
+32: (bf) r1 = r10                     ; R1_w=fp0 R10=fp0
+; struct flow_key key = {};
+33: (07) r1 += -88                    ; R1_w=fp-88
+; key.src_port = BPF_CORE_READ(sk, __sk_common.skc_num);
+34: (b7) r2 = 2                       ; R2_w=2
+35: (85) call bpf_probe_read_kernel#113       ; R0=scalar() fp-88=????mmmm
+; key.src_port = BPF_CORE_READ(sk, __sk_common.skc_num);
+36: (69) r1 = *(u16 *)(r10 -88)       ; R1_w=scalar(umax=65535,var_off=(0x0; 0xffff)) R10=fp0 fp-88=????mmmm
+; key.src_port = BPF_CORE_READ(sk, __sk_common.skc_num);
+37: (6b) *(u16 *)(r10 -8) = r1        ; R1_w=scalar(umax=65535,var_off=(0x0; 0xffff)) R10=fp0 fp-8=
+38: (b7) r1 = 12                      ; R1_w=12
+39: (bf) r3 = r6                      ; R3_w=scalar(id=1) R6=scalar(id=1)
+40: (0f) r3 += r1                     ; R1_w=12 R3_w=scalar()
+41: (bf) r1 = r10                     ; R1_w=fp0 R10=fp0
+; struct flow_key key = {};
+42: (07) r1 += -88                    ; R1_w=fp-88
+; key.dst_port = bpf_ntohs(BPF_CORE_READ(sk, __sk_common.skc_dport));
+43: (b7) r2 = 2                       ; R2_w=2
+44: (85) call bpf_probe_read_kernel#113       ; R0_w=scalar() fp-88=????mmmm
+; key.dst_port = bpf_ntohs(BPF_CORE_READ(sk, __sk_common.skc_dport));
+45: (69) r1 = *(u16 *)(r10 -88)       ; R1_w=scalar(umax=65535,var_off=(0x0; 0xffff)) R10=fp0 fp-88=????mmmm
+; key.dst_port = bpf_ntohs(BPF_CORE_READ(sk, __sk_common.skc_dport));
+46: (dc) r1 = be16 r1                 ; R1_w=scalar()
+; key.dst_port = bpf_ntohs(BPF_CORE_READ(sk, __sk_common.skc_dport));
+47: (6b) *(u16 *)(r10 -6) = r1        ; R1_w=scalar() R10=fp0 fp-8=????mmmm
+; struct tcp_metrics metrics = {};
+48: (7b) *(u64 *)(r10 -24) = r7       ; R7=0 R10=fp0 fp-24_w=00000000
+49: (7b) *(u64 *)(r10 -32) = r7       ; R7=0 R10=fp0 fp-32_w=00000000
+50: (7b) *(u64 *)(r10 -40) = r7       ; R7=0 R10=fp0 fp-40_w=00000000
+51: (7b) *(u64 *)(r10 -48) = r7       ; R7=0 R10=fp0 fp-48_w=00000000
+52: (7b) *(u64 *)(r10 -56) = r7       ; R7=0 R10=fp0 fp-56_w=00000000
+53: (7b) *(u64 *)(r10 -64) = r7       ; R7=0 R10=fp0 fp-64_w=00000000
+54: (7b) *(u64 *)(r10 -72) = r7       ; R7=0 R10=fp0 fp-72_w=00000000
+55: (7b) *(u64 *)(r10 -80) = r7       ; R7=0 R10=fp0 fp-80_w=00000000
+56: (7b) *(u64 *)(r10 -88) = r7       ; R7=0 R10=fp0 fp-88_w=00000000
+57: (b7) r1 = 1736                    ; R1_w=1736
+58: (bf) r3 = r6                      ; R3_w=scalar(id=1) R6=scalar(id=1)
+59: (0f) r3 += r1                     ; R1_w=1736 R3_w=scalar()
+60: (bf) r1 = r10                     ; R1_w=fp0 R10=fp0
+; struct flow_key key = {};
+61: (07) r1 += -88                    ; R1_w=fp-88
+; metrics.snd_cwnd = BPF_CORE_READ(ts, snd_cwnd);
+62: (b7) r2 = 4                       ; R2_w=4
+63: (85) call bpf_probe_read_kernel#113       ; R0=scalar() fp-88=0000mmmm
+64: (b7) r1 = 1732                    ; R1_w=1732
+65: (bf) r3 = r6                      ; R3_w=scalar(id=1) R6=scalar(id=1)
+66: (0f) r3 += r1                     ; R1_w=1732 R3_w=scalar()
+67: (bf) r1 = r10                     ; R1_w=fp0 R10=fp0
+; struct flow_key key = {};
+68: (07) r1 += -96                    ; R1_w=fp-96
+; metrics.ssthresh = BPF_CORE_READ(ts, snd_ssthresh);
+69: (b7) r2 = 4                       ; R2_w=4
+70: (85) call bpf_probe_read_kernel#113       ; R0_w=scalar() fp-96=????mmmm
+; metrics.ssthresh = BPF_CORE_READ(ts, snd_ssthresh);
+71: (61) r1 = *(u32 *)(r10 -96)       ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-96=????mmmm
+; metrics.ssthresh = BPF_CORE_READ(ts, snd_ssthresh);
+72: (63) *(u32 *)(r10 -84) = r1       ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-88=mmmmmmmm
+73: (b7) r1 = 1632                    ; R1_w=1632
+74: (bf) r3 = r6                      ; R3_w=scalar(id=1) R6=scalar(id=1)
+75: (0f) r3 += r1                     ; R1_w=1632 R3_w=scalar()
+76: (bf) r1 = r10                     ; R1_w=fp0 R10=fp0
+; struct flow_key key = {};
+77: (07) r1 += -96                    ; R1_w=fp-96
+; metrics.srtt = BPF_CORE_READ(ts, srtt_us) >> 3; 
+78: (b7) r2 = 4                       ; R2_w=4
+79: (85) call bpf_probe_read_kernel#113       ; R0=scalar() fp-96=????mmmm
+; metrics.srtt = BPF_CORE_READ(ts, srtt_us) >> 3; 
+80: (61) r1 = *(u32 *)(r10 -96)       ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-96=????mmmm
+; metrics.srtt = BPF_CORE_READ(ts, srtt_us) >> 3; 
+81: (77) r1 >>= 3                     ; R1_w=scalar(umax=536870911,var_off=(0x0; 0x1fffffff))
+; metrics.srtt = BPF_CORE_READ(ts, srtt_us) >> 3; 
+82: (63) *(u32 *)(r10 -80) = r1       ; R1_w=scalar(umax=536870911,var_off=(0x0; 0x1fffffff)) R10=fp0 fp-80=
+83: (b7) r1 = 2104                    ; R1_w=2104
+84: (bf) r3 = r6                      ; R3_w=scalar(id=1) R6=scalar(id=1)
+85: (0f) r3 += r1                     ; R1_w=2104 R3_w=scalar()
+86: (bf) r1 = r10                     ; R1_w=fp0 R10=fp0
+; struct flow_key key = {};
+87: (07) r1 += -96                    ; R1_w=fp-96
+; metrics.retransmissions = BPF_CORE_READ(ts, total_retrans);
+88: (b7) r2 = 4                       ; R2_w=4
+89: (85) call bpf_probe_read_kernel#113       ; R0_w=scalar() fp-96=????mmmm
+; metrics.retransmissions = BPF_CORE_READ(ts, total_retrans);
+90: (61) r1 = *(u32 *)(r10 -96)       ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-96=????mmmm
+; metrics.retransmissions = BPF_CORE_READ(ts, total_retrans);
+91: (63) *(u32 *)(r10 -76) = r1       ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-80=mmmmmmmm
+92: (b7) r1 = 1448                    ; R1_w=1448
+93: (bf) r3 = r6                      ; R3_w=scalar(id=1) R6=scalar(id=1)
+94: (0f) r3 += r1                     ; R1_w=1448 R3_w=scalar()
+95: (bf) r1 = r10                     ; R1_w=fp0 R10=fp0
+; struct flow_key key = {};
+96: (07) r1 += -96                    ; R1_w=fp-96
+; metrics.bytes_acked = BPF_CORE_READ(ts, bytes_acked);
+97: (b7) r2 = 8                       ; R2_w=8
+98: (85) call bpf_probe_read_kernel#113       ; R0=scalar() fp-96=mmmmmmmm
+; metrics.bytes_acked = BPF_CORE_READ(ts, bytes_acked);
+99: (79) r1 = *(u64 *)(r10 -96)       ; R1_w=scalar() R10=fp0 fp-96=mmmmmmmm
+; metrics.bytes_acked = BPF_CORE_READ(ts, bytes_acked);
+100: (7b) *(u64 *)(r10 -64) = r1      ; R1_w=scalar() R10=fp0 fp-64_w=mmmmmmmm
+; metrics.ca_state = BPF_CORE_READ_BITFIELD_PROBED(icsk, icsk_ca_state);
+101: (7b) *(u64 *)(r10 -96) = r7      ; R7=0 R10=fp0 fp-96_w=00000000
+102: (b7) r1 = 1232                   ; R1_w=1232
+103: (bf) r3 = r6                     ; R3_w=scalar(id=1) R6=scalar(id=1)
+104: (0f) r3 += r1                    ; R1_w=1232 R3_w=scalar()
+105: (bf) r1 = r10                    ; R1_w=fp0 R10=fp0
+; struct flow_key key = {};
+106: (07) r1 += -96                   ; R1_w=fp-96
+; metrics.ca_state = BPF_CORE_READ_BITFIELD_PROBED(icsk, icsk_ca_state);
+107: (b7) r2 = 1                      ; R2_w=1
+108: (85) call bpf_probe_read_kernel#113      ; R0_w=scalar() fp-96_w=0000000m
+109: (79) r1 = *(u64 *)(r10 -96)      ; R1_w=scalar() R10=fp0 fp-96_w=0000000m
+110: (67) r1 <<= 59                   ; R1_w=scalar(smax=8646911284551352320,umax=17870283321406128128,var_off=(0x0; 0xf800000000000000),s32_min=0,s32_max=0,u32_max=0)
+111: (b7) r2 = 0                      ; R2_w=0
+112: (15) if r2 == 0x0 goto pc+2      ; R2_w=0
+; metrics.ca_state = BPF_CORE_READ_BITFIELD_PROBED(icsk, icsk_ca_state);
+115: (77) r1 >>= 59                   ; R1_w=scalar(umax=31,var_off=(0x0; 0x1f))
+; metrics.ca_state = BPF_CORE_READ_BITFIELD_PROBED(icsk, icsk_ca_state);
+116: (73) *(u8 *)(r10 -56) = r1       ; R1_w=scalar(umax=31,var_off=(0x0; 0x1f)) R10=fp0 fp-56=
+117: (b7) r1 = 1676                   ; R1_w=1676
+118: (bf) r3 = r6                     ; R3_w=scalar(id=1) R6=scalar(id=1)
+119: (0f) r3 += r1                    ; R1_w=1676 R3_w=scalar()
+120: (bf) r1 = r10                    ; R1_w=fp0 R10=fp0
+121: (07) r1 += -96                   ; R1_w=fp-96
+; metrics.packets_out = BPF_CORE_READ(ts, packets_out);
+122: (b7) r2 = 4                      ; R2_w=4
+123: (85) call bpf_probe_read_kernel#113      ; R0_w=scalar() fp-96=0000mmmm
+; metrics.packets_out = BPF_CORE_READ(ts, packets_out);
+124: (61) r1 = *(u32 *)(r10 -96)      ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-96=0000mmmm
+; metrics.packets_out = BPF_CORE_READ(ts, packets_out);
+125: (63) *(u32 *)(r10 -52) = r1      ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-56=mmmmmmmm
+126: (b7) r1 = 1680                   ; R1_w=1680
+127: (bf) r3 = r6                     ; R3_w=scalar(id=1) R6=scalar(id=1)
+128: (0f) r3 += r1                    ; R1_w=1680 R3_w=scalar()
+129: (bf) r1 = r10                    ; R1_w=fp0 R10=fp0
+; metrics.ca_state = BPF_CORE_READ_BITFIELD_PROBED(icsk, icsk_ca_state);
+130: (07) r1 += -96                   ; R1_w=fp-96
+; metrics.retrans_out = BPF_CORE_READ(ts, retrans_out);
+131: (b7) r2 = 4                      ; R2_w=4
+132: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-96=0000mmmm
+; metrics.retrans_out = BPF_CORE_READ(ts, retrans_out);
+133: (61) r1 = *(u32 *)(r10 -96)      ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-96=0000mmmm
+; metrics.retrans_out = BPF_CORE_READ(ts, retrans_out);
+134: (63) *(u32 *)(r10 -48) = r1      ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-48=
+135: (b7) r1 = 332                    ; R1_w=332
+136: (bf) r3 = r6                     ; R3_w=scalar(id=1) R6=scalar(id=1)
+137: (0f) r3 += r1                    ; R1_w=332 R3_w=scalar()
+138: (bf) r1 = r10                    ; R1_w=fp0 R10=fp0
+; metrics.ca_state = BPF_CORE_READ_BITFIELD_PROBED(icsk, icsk_ca_state);
+139: (07) r1 += -96                   ; R1_w=fp-96
+; metrics.sndbuf = BPF_CORE_READ(sk, sk_sndbuf);
+140: (b7) r2 = 4                      ; R2_w=4
+141: (85) call bpf_probe_read_kernel#113      ; R0_w=scalar() fp-96=0000mmmm
+; metrics.sndbuf = BPF_CORE_READ(sk, sk_sndbuf);
+142: (61) r1 = *(u32 *)(r10 -96)      ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-96=0000mmmm
+; metrics.sndbuf = BPF_CORE_READ(sk, sk_sndbuf);
+143: (63) *(u32 *)(r10 -44) = r1      ; R1_w=scalar(umax=4294967295,var_off=(0x0; 0xffffffff)) R10=fp0 fp-48=mmmmmmmm
+144: (b7) r1 = 18                     ; R1_w=18
+145: (bf) r3 = r6                     ; R3_w=scalar(id=1) R6=scalar(id=1)
+146: (0f) r3 += r1                    ; R1_w=18 R3_w=scalar()
+147: (bf) r1 = r10                    ; R1_w=fp0 R10=fp0
+; metrics.ca_state = BPF_CORE_READ_BITFIELD_PROBED(icsk, icsk_ca_state);
+148: (07) r1 += -96                   ; R1_w=fp-96
+; metrics.sk_state = BPF_CORE_READ(sk, __sk_common.skc_state);
+149: (b7) r2 = 1                      ; R2_w=1
+150: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-96=0000mmmm
+; metrics.sk_state = BPF_CORE_READ(sk, __sk_common.skc_state);
+151: (71) r1 = *(u8 *)(r10 -96)       ; R1_w=scalar(umax=255,var_off=(0x0; 0xff)) R10=fp0 fp-96=0000mmmm
+; metrics.sk_state = BPF_CORE_READ(sk, __sk_common.skc_state);
+152: (73) *(u8 *)(r10 -40) = r1       ; R1_w=scalar(umax=255,var_off=(0x0; 0xff)) R10=fp0 fp-40=
+153: (b7) r1 = 1184                   ; R1_w=1184
+154: (0f) r6 += r1                    ; R1_w=1184 R6_w=scalar()
+155: (bf) r1 = r10                    ; R1_w=fp0 R10=fp0
+; metrics.ca_state = BPF_CORE_READ_BITFIELD_PROBED(icsk, icsk_ca_state);
+156: (07) r1 += -96                   ; R1_w=fp-96
+; const struct tcp_congestion_ops *ca_ops = BPF_CORE_READ(icsk, icsk_ca_ops);
+157: (b7) r2 = 8                      ; R2_w=8
+158: (bf) r3 = r6                     ; R3_w=scalar(id=2) R6_w=scalar(id=2)
+159: (85) call bpf_probe_read_kernel#113      ; R0_w=scalar() fp-96=mmmmmmmm
+; const struct tcp_congestion_ops *ca_ops = BPF_CORE_READ(icsk, icsk_ca_ops);
+160: (79) r1 = *(u64 *)(r10 -96)      ; R1_w=scalar() R10=fp0 fp-96=mmmmmmmm
+; bpf_core_read_str(&metrics.ca_name, sizeof(metrics.ca_name), ca_ops->name);
+161: (79) r3 = *(u64 *)(r1 +88)
+R1 invalid mem access 'scalar'
+processed 160 insns (limit 1000000) max_states_per_insn 0 total_states 8 peak_states 8 mark_read 3
+-- END PROG LOAD LOG --
+libbpf: prog 'kprobe_tcp_ack': failed to load: -13
+libbpf: failed to load object 'tcp_co_kernel.o'
+Error: failed to load object file
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo rm -rf /sys/fs/bpf/tcp_obs
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo mount -t bpf none /sys/fs/bpf
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ sudo bpftool prog loadall tcp_co_kernel.o /sys/fs/bpf/tcp_obs autoattach
+jrlsf@Artemis1915:~/labs-ebpf/tcp_atv_obs$ 

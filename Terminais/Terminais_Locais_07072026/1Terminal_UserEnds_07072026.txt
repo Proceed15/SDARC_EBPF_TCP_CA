@@ -1,0 +1,539 @@
+Obs.: Só a partir da última instância do terminal o tec_exporter.py estava atualizado, concentre-se nos resultados de hoje 07072026 com 0 3 na frente do nome...
+UserPath/UserEnds$ python3 tcp_exporter.py
+🚀 Observatório User-End iniciado com sucesso!
+📊 Para Grafana / Prometheus : http://localhost:8080/metrics
+📓 Para Jupyter Notebook    : http://localhost:8080/api/json
+Pressione Ctrl+C para parar...
+Meu_IP_Ufscar_Eduroam[sudo] password for MeuUsuario: 
+Sorry, try again.
+[sudo] password for MeuUsuario: 
+127.0.0.1 - - [07/Jul/2026 14:30:55] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 14:30:55] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [07/Jul/2026 14:31:09] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 14:32:26] "GET /metrics HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51129)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 60, in do_GET
+    src_port = chave.get('src_port', 0)
+               ^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+----------------------------------------
+127.0.0.1 - - [07/Jul/2026 14:32:31] "GET /metrics HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51136)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 60, in do_GET
+    src_port = chave.get('src_port', 0)
+               ^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+----------------------------------------
+127.0.0.1 - - [07/Jul/2026 14:41:56] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 14:41:57] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [07/Jul/2026 14:42:18] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [07/Jul/2026 14:42:18] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [07/Jul/2026 14:42:39] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [07/Jul/2026 14:42:39] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [07/Jul/2026 14:47:00] "GET /api/json HTTP/1.1" 200 -
+[sudo] password for MeuUsuario: 
+127.0.0.1 - - [07/Jul/2026 15:08:32] "GET /metrics HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 57397)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 60, in do_GET
+    # resposta_prometheus += "# TYPE tcp_retrans counter\n\n"
+                   ^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+----------------------------------------
+^CServidor encerrado.
+UserPath/UserEnds$ python3 tcp_exporter.py
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 22
+    return dados = json.loads(resultado.stdout)
+                 ^
+SyntaxError: invalid syntax
+UserPath/UserEnds$ python3 tcp_exporter.py
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 85
+    """if valor.get('snd_cwnd', 0) > 0:
+IndentationError: unexpected indent
+UserPath/UserEnds$ python3 tcp_exporter.py
+🚀 Observatório User-End iniciado com sucesso!
+📊 Para Grafana / Prometheus : http://localhost:8080/metrics
+📓 Para Jupyter Notebook    : http://localhost:8080/api/json
+Pressione Ctrl+C para parar...
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54667)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54668)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54669)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54670)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54671)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54672)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54673)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54674)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54675)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54676)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54677)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54678)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54679)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54680)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54681)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54682)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54683)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54684)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54685)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 54686)
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/socketserver.py", line 318, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 349, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.12/socketserver.py", line 761, in __init__
+    self.handle()
+  File "/usr/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/MeuUsuario/UserEnds/tcp_exporter.py", line 32, in do_GET
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] Conexão recebida em: {self.path}")
+              ^^^^^^^^
+NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
+----------------------------------------
+^CServidor encerrado.
+UserPath/UserEnds$ python3 tcp_exporter.py
+🚀 Observatório User-End iniciado com sucesso!
+📊 Para Grafana / Prometheus : http://localhost:8080/metrics
+📓 Para Jupyter Notebook    : http://localhost:8080/api/json
+Pressione Ctrl+C para parar...
+[15:12:33] Conexão recebida em: /api/json
+127.0.0.1 - - [07/Jul/2026 15:12:33] "GET /api/json HTTP/1.1" 200 -
+[15:12:36] Conexão recebida em: /metrics
+127.0.0.1 - - [07/Jul/2026 15:12:36] "GET /metrics HTTP/1.1" 200 -
+[15:12:36] ⚠️ AVISO: Dados brutos detectados. O formato BTF (chaves/valores) pode estar ausente no Kernel.
+[15:13:02] Conexão recebida em: /api/json
+127.0.0.1 - - [07/Jul/2026 15:13:02] "GET /api/json HTTP/1.1" 200 -
+[15:13:04] Conexão recebida em: /api/json
+127.0.0.1 - - [07/Jul/2026 15:13:04] "GET /api/json HTTP/1.1" 200 -
+[15:13:06] Conexão recebida em: /metrics
+127.0.0.1 - - [07/Jul/2026 15:13:06] "GET /metrics HTTP/1.1" 200 -
+[15:13:06] ⚠️ AVISO: Dados brutos detectados. O formato BTF (chaves/valores) pode estar ausente no Kernel.
+[15:18:01] Conexão recebida em: /metrics
+127.0.0.1 - - [07/Jul/2026 15:18:01] "GET /metrics HTTP/1.1" 200 -
+[15:18:01] ⚠️ AVISO: Dados brutos detectados. O formato BTF (chaves/valores) pode estar ausente no Kernel.
+[15:18:28] Conexão recebida em: /metrics
+127.0.0.1 - - [07/Jul/2026 15:18:28] "GET /metrics HTTP/1.1" 200 -
+[15:18:28] ⚠️ AVISO: Dados brutos detectados. O formato BTF (chaves/valores) pode estar ausente no Kernel.
+[15:18:30] Conexão recebida em: /api/json
+127.0.0.1 - - [07/Jul/2026 15:18:30] "GET /api/json HTTP/1.1" 200 -
+[15:19:49] Conexão recebida em: /metrics
+127.0.0.1 - - [07/Jul/2026 15:19:49] "GET /metrics HTTP/1.1" 200 -
+[15:19:49] ⚠️ AVISO: Dados brutos detectados. O formato BTF (chaves/valores) pode estar ausente no Kernel.
+^CServidor encerrado.
+UserPath/UserEnds$ python3 tcp_exporter.py
+🚀 Observatório Blindado (com Descodificador C) iniciado!
+📊 Grafana/Prometheus : http://localhost:8080/metrics
+📓 Jupyter / JSON     : http://localhost:8080/api/json
+Pressione Ctrl+C para parar...
+127.0.0.1 - - [07/Jul/2026 15:29:43] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [07/Jul/2026 15:30:01] "GET /metrics HTTP/1.1" 200 -
+^C
+Servidor encerrado.
+
+UserPath/UserEnds$ 

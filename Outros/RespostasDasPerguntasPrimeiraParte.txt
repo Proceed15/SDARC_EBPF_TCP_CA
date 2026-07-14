@@ -1,0 +1,39 @@
+Respostas:
+
+Parte 1:
+1. O que é eBPF?
+R. É o sistema extended berkeley packet filter, é um sistema para gerenciar, modificar e analisar operações em um dispositivo eltrônico a nível do Kernel de seu Sistema Operacional, funcionando como aplicações que realizam suas operações rapidamente no kernel designado.
+
+2. Por que executar programas dentro do kernel pode ser útil?
+R. Para ter eficiência em realizar operações em um sistema operacional, agindo antes de aplicações níveis acima do Kernel no mesmo Dispositivo e Sistema Operacional.
+
+3. O que significa dizer que os programas são verificados antes da execução?
+R. Que são verificados para serem compatíveis com o Kernel do Sistema Operacional onde serão executados.
+
+4. Cite três áreas onde eBPF pode ser utilizado.
+R. Em redes, observabilidade e segurança a partir do sistema operacional.
+
+5. O que são hooks?
+R. São vínculos a operações que o aplicativo construído com eBPF tem com o kernel do sistema operacional, ele executa suas funções a partir dessas ligações ao Sistema Operacional do Dispositivo.
+
+Parte 2:
+1. Quais arquivos apareceram na saída?
+R. Vários, desde executáveis até arquivos de leitura que eram abertos e depois fechados rapidamente, como um de um processo chamado PID 918 que fez várias leituras várias vezes e fechou depois.
+2. O arquivo aberto por você apareceu?
+R. Sim, é um dos comandos Cat registrados mais recentemente.
+3. Surgiram arquivos que você não abriu manualmente?
+R. Vários, a maioria dos comandos de abertura Cat que vi estava, abrindo outros arquivos antes.
+4. Por que isso acontece?
+R. Aconteceu nesse caso por causa das diversas operações do sistema operacional interagindo com o Visual Studio Code que estou usando no momento.
+Conclusão:
+Parte 3:
+1. O que mais chamou sua atenção?
+R. A grande variedade de comandos que estavam sendo executados e os processos temporários abertos e fechados rapidamente!
+2. Qual a principal vantagem do eBPF?
+R. Operar diretamente no Kernel do Sistema Operacional usando artifícios como os Hooks.
+3. Você acredita que essa tecnologia pode ser útil para redes, segurança ou observabilidade?
+Por quê?
+R. Sim, muito; pois todas as operações acontecem diretamente no sistema operacional e assim podem ser vistas antes de chegarem a aplicações de mais alto e nível e solucionar ou simplesmente evitar alguns problemas, além de abrir um amplo escopo para noas soluções que implementdas agem com mais velocidade.
+
+Parte 4:
+O comportamento demonstra uma atividade sincrôna entre os processos mostrados em tela e os comandos executados antes e depois a nível de sistema operacional, além das operações ocultas necessárias a execução da aplicação ou as de ampla observação e alto desempenho.

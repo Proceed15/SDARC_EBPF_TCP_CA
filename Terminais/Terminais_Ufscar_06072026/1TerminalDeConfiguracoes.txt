@@ -1,0 +1,14 @@
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ sudo rm -rf /sys/fs/bpf/tcp_obs
+[sudo] senha para computacao: 
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ sudo mount -t bpf none /sys/fs/bpf
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ sudo bpftool prog loadall tcp_co_kernel.o /sys/fs/bpf/tcp_obs autoattach
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ hostname -I
+200.133.238.163 2801:b0:b0:113:b6d9:58c5:3caf:d45f 2801:b0:b0:113:d835:9e1c:7158:8679 
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ ^C
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ hostname -I
+10.98.91.55 2804:18:130:dca4:3faf:2aa:b730:11de 2804:18:130:dca4:2eb0:e788:a680:d583 
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ hostname -I
+200.133.238.163 2801:b0:b0:113:8040:d047:a96b:adf2 2801:b0:b0:113:d835:9e1c:7158:8679 
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ ^C
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/tcp_atv_obs$ 

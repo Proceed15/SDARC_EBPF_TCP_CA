@@ -1,0 +1,5 @@
+sudo ./xdp_loader
+ping -c 5 127.0.0.1
+sudo /usr/lib/linux-tools/6.8.0-124-generic/bpftool map list
+sudo /usr/lib/linux-tools/6.8.0-124-generic/bpftool map dump id Número do ID
+Rodar os comandos sequencialmente para melhores resultados!

@@ -1,0 +1,61 @@
+UserPaths/UserEnds$ jupyter server list
+Command 'jupyter' not found, but can be installed with:
+sudo apt install jupyter-core
+UserPaths/UserEnds$ sudo apt install jupyter-core
+[sudo] password for jrlsf: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  python3-jupyter-core python3-platformdirs python3-traitlets
+The following NEW packages will be installed:
+  jupyter-core python3-jupyter-core python3-platformdirs python3-traitlets
+0 upgraded, 4 newly installed, 0 to remove and 26 not upgraded.
+Need to get 131 kB of archives.
+After this operation, 716 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 python3-platformdirs all 4.2.0-1 [16.1 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-traitlets all 5.5.0-2 [85.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-jupyter-core all 5.3.2-1ubuntu1 [25.5 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/universe amd64 jupyter-core all 5.3.2-1ubuntu1 [4044 B]
+Fetched 131 kB in 0s (670 kB/s)
+Selecting previously unselected package python3-platformdirs.
+(Reading database ... 67630 files and directories currently installed.)
+Preparing to unpack .../python3-platformdirs_4.2.0-1_all.deb ...
+Unpacking python3-platformdirs (4.2.0-1) ...
+Selecting previously unselected package python3-traitlets.
+Preparing to unpack .../python3-traitlets_5.5.0-2_all.deb ...
+Unpacking python3-traitlets (5.5.0-2) ...
+Selecting previously unselected package python3-jupyter-core.
+Preparing to unpack .../python3-jupyter-core_5.3.2-1ubuntu1_all.deb ...
+Unpacking python3-jupyter-core (5.3.2-1ubuntu1) ...
+Selecting previously unselected package jupyter-core.
+Preparing to unpack .../jupyter-core_5.3.2-1ubuntu1_all.deb ...
+Unpacking jupyter-core (5.3.2-1ubuntu1) ...
+Setting up python3-platformdirs (4.2.0-1) ...
+Setting up python3-traitlets (5.5.0-2) ...
+Setting up python3-jupyter-core (5.3.2-1ubuntu1) ...
+Setting up jupyter-core (5.3.2-1ubuntu1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+UserPaths/UserEnds$ jupyter server list
+usage: jupyter [-h] [--version] [--config-dir] [--data-dir] [--runtime-dir] [--paths] [--json] [--debug] [subcommand]
+
+Jupyter: Interactive Computing
+
+positional arguments:
+  subcommand     the subcommand to launch
+
+options:
+  -h, --help     show this help message and exit
+  --version      show the versions of core jupyter packages and exit
+  --config-dir   show Jupyter config dir
+  --data-dir     show Jupyter data dir
+  --runtime-dir  show Jupyter runtime dir
+  --paths        show all Jupyter paths. Add --json for machine-readable format.
+  --json         output paths as machine-readable json
+  --debug        output debug information about paths
+
+Available subcommands: migrate troubleshoot
+
+Jupyter command `jupyter-server` not found.
+UserPaths/UserEnds$ 

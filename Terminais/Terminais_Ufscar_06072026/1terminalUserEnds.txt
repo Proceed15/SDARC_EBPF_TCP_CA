@@ -1,0 +1,21 @@
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/UserEnds$ python3 tcp_exporter.py~
+python3: can't open file '/home/computacao/Área de trabalho/UserEnds/tcp_exporter.py~': [Errno 2] No such file or directory
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/UserEnds$ python3 tcp_exporter.py
+🚀 Observatório User-End iniciado com sucesso!
+📊 Para Grafana / Prometheus : http://localhost:8080/metrics
+📓 Para Jupyter Notebook    : http://localhost:8080/api/json
+Pressione Ctrl+C para parar...
+[sudo] senha para computacao: 
+127.0.0.1 - - [06/Jul/2026 17:31:35] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 17:31:35] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [06/Jul/2026 17:32:02] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 17:32:02] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [06/Jul/2026 17:40:08] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 17:40:25] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 17:46:55] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 17:53:09] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 17:55:38] "GET /api/json HTTP/1.1" 200 -
+127.0.0.1 - - [06/Jul/2026 17:57:16] "GET /api/json HTTP/1.1" 200 -
+^CServidor encerrado.
+(base) computacao@computacao-ThinkCentre-M75q-Gen-2:~/Área de trabalho/UserEnds$ 
+Concluído os Testes no Computador na UFScar!

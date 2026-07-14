@@ -1,0 +1,75 @@
+Tutorial Definitivo: Observatório eBPF (C + Python)
+
+Este guia prático ensina como compilar o seu código no kernel do Linux, ativar os "ganchos" de captura de rede (kprobes) e ler os resultados em tempo real através de uma API em Python.
+
+Fase 1: Instalando a "Câmera" no Kernel (Backend)
+
+Todos estes comandos devem ser executados dentro da pasta onde está o seu código C original (~/labs-ebpf/tcp_atv_obs).
+
+1. Limpar a instalação anterior (Garantia de segurança)
+Caso tenha um mapa "preso" de testes antigos, destrua-o primeiro:
+
+sudo rm -rf /sys/fs/bpf/tcp_obs
+
+
+2. Compilar o código C para BPF
+Isso traduz o seu código humano para a linguagem ultra-rápida do Kernel:
+
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+
+
+3. Preparar o terreno na Memória
+Garante que o Linux permite fixar mapas de memória persistentes:
+
+sudo mount -t bpf none /sys/fs/bpf
+
+
+4. A MÁGICA: Carregar e Ativar a Câmera (autoattach)
+Este comando pega no ficheiro compilado, cria o mapa de memória (tcp_metrics_map) e liga os cabos na placa de rede para que os pacotes comecem a ser lidos!
+
+sudo bpftool prog loadall tcp_co_kernel.o /sys/fs/bpf/tcp_obs autoattach
+
+
+Pronto! O seu Backend já está vivo e monitorizando a rede silenciosamente.
+
+Fase 2: Ligando o Monitor (Frontend Python)
+
+Abra um novo terminal, navegue para a sua pasta UserEnds e inicie a sua API:
+
+cd ~/UserEnds
+python3 tcp_exporter.py
+
+
+Deixe este terminal aberto. Ele ficará aguardando.
+
+Fase 3: Gerando o Tráfego TCP
+
+Precisamos que pacotes reais passem pela placa de rede para que o Kernel os capture.
+
+1. Iniciar o Servidor Receptor
+Abra um terceiro terminal e rode:
+
+iperf3 -s -p 5202
+
+
+2. Disparar a Transferência de Dados
+Abra um quarto terminal. Descubra o seu IP real na rede local com o comando ip a (ex: 192.168.x.x ou 172.x.x.x) e dispare o tráfego usando forçosamente IPv4 (-4):
+
+iperf3 -c SEU_IP_AQUI -p 5202 -t 30 -4
+
+
+Fase 4: A Visualização dos Resultados
+
+Durante os 30 segundos em que o passo anterior estiver a decorrer, abra o navegador web do seu computador e acesse:
+
+http://localhost:8080/api/json
+
+Dê F5 (Atualizar) na página. Você verá o JSON atualizar instantaneamente com as informações de Porta de Origem, Destino e o tamanho exato da Janela de Congestionamento (Cwnd) enviada diretamente de dentro do núcleo do Linux!
+
+Fase 5: Desmontando o Laboratório
+
+Após terminar as suas análises (e preencher o Jupiter Notebook), é uma boa prática remover a "câmera" para libertar recursos do Linux.
+No terminal, basta rodar:
+
+sudo rm -rf /sys/fs/bpf/tcp_obs
+

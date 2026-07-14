@@ -4,6 +4,11 @@ mkdir ~/labs-ebpf/tcp_atv_obs
 cd ~/labs-ebpf/tcp_atv_obs
 sudo apt update
 sudo apt install -y linux-tools-common linux-tools-6.8.0-124-generic
+sudo apt install libbpf-tools
+sudo apt install clang-tools
+sudo apt install -y libbpf-dev libelf-dev libpcap-dev gcc-multilib build-essential linux-tools-common linux-tools-generic
+sudo apt install clang
+clang --version
 sudo ln -sf /usr/lib/linux-tools/6.8.0-124-generic/bpftool /usr/local/bin/bpftool
 hash -r
 bpftool version
@@ -14,4 +19,5 @@ go mod init tcp-co
 go get github.com/cilium/ebpf@latest
 sudo apt update
 sudo apt install -y iperf3
+
 

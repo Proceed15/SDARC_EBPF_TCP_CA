@@ -1,0 +1,321 @@
+UserPath/labs-ebpf/tcp_atv_obs$ hostname -I
+MeuIPLocal 2804:7f0:6882:2988:21e9:3ebf:103b:866a 2804:7f0:6882:2988:b2d7:e40d:fd1c:9511 
+UserPath/labs-ebpf/tcp_atv_obs$ sudo rm -rf /sys/fs/bpf/tcp_obs
+[sudo] password for jrlsf: 
+UserPath/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+UserPath/labs-ebpf/tcp_atv_obs$ sudo mount -t bpf none /sys/fs/bpf
+UserPath/labs-ebpf/tcp_atv_obs$ sudo bpftool prog loadall tcp_co_kernel.o /sys/fs/bpf/tcp_obs autoattach
+UserPath/labs-ebpf/tcp_atv_obs$ sudo bpftool map dump name tcp_metrics_map
+[{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 46325,
+            "dst_port": 48532
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 254,
+            "srtt": 17755,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 3750490,
+            "ca_state": 0,
+            "packets_out": 1,
+            "retrans_out": 0,
+            "sndbuf": 496128,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 8888,
+            "dst_port": 63430
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 204,
+            "srtt": 503,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 2365454,
+            "ca_state": 0,
+            "packets_out": 2,
+            "retrans_out": 0,
+            "sndbuf": 992256,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 46325,
+            "dst_port": 48536
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 278,
+            "srtt": 2327,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 8040671,
+            "ca_state": 0,
+            "packets_out": 1,
+            "retrans_out": 0,
+            "sndbuf": 2045440,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 8888,
+            "dst_port": 63427
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 138,
+            "srtt": 507,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 15428682,
+            "ca_state": 0,
+            "packets_out": 1,
+            "retrans_out": 0,
+            "sndbuf": 557056,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 48532,
+            "dst_port": 46325
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 9985,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 7477644,
+            "ca_state": 0,
+            "packets_out": 0,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 48536,
+            "dst_port": 46325
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 12188,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 1071352,
+            "ca_state": 0,
+            "packets_out": 0,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 8888,
+            "dst_port": 63442
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 753,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 60849,
+            "ca_state": 0,
+            "packets_out": 0,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 8888,
+            "dst_port": 62746
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 517,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 126377,
+            "ca_state": 0,
+            "packets_out": 0,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 8888,
+            "dst_port": 65290
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 513,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 232627,
+            "ca_state": 0,
+            "packets_out": 0,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 8888,
+            "dst_port": 53507
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 516,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 417719,
+            "ca_state": 0,
+            "packets_out": 0,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 8888,
+            "dst_port": 63432
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 308,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 3427265,
+            "ca_state": 0,
+            "packets_out": 1,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 8888,
+            "dst_port": 63440
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 254,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 3386881,
+            "ca_state": 0,
+            "packets_out": 1,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    }
+]
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc noqueue 0: root refcnt 2 
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc add dev lo root netem loss 1%
+[sudo] password for jrlsf: 
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc del dev lo root
+[sudo] password for jrlsf: 
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc add dev lo root netem delay 100ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc netem 8002: root refcnt 2 limit 1000 delay 100ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc del dev lo root
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc add dev lo root netem delay 200ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc netem 8003: root refcnt 2 limit 1000 delay 200ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc del dev lo root
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc noqueue 0: root refcnt 2 
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc add dev lo root netem delay 500ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc netem 8004: root refcnt 2 limit 1000 delay 500ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc del dev lo root
+[sudo] password for jrlsf: 
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc noqueue 0: root refcnt 2 
+UserPath/labs-ebpf/tcp_atv_obs$ sudo sysctl -w net.ipv4.tcp_congestion_control=reno
+[sudo] password for jrlsf: 
+net.ipv4.tcp_congestion_control = reno
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+[sudo] password for jrlsf: 
+qdisc noqueue 0: root refcnt 2 
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc add dev lo root netem loss 1%
+UserPath/labs-ebpf/tcp_atv_obs$ sudo sysctl -w net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_congestion_control = cubic
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc del dev lo root
+[sudo] password for jrlsf: 
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc add dev lo root netem delay 100ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo sysctl -w net.ipv4.tcp_congestion_control=reno
+net.ipv4.tcp_congestion_control = reno
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc add dev lo root netem delay 200ms
+Error: Exclusivity flag on, cannot modify.
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc del dev lo root
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc add dev lo root netem delay 200ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc netem 8007: root refcnt 2 limit 1000 delay 200ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo sysctl -w net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_congestion_control = cubic
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc del dev lo root
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc add dev lo root netem delay 500ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc netem 8008: root refcnt 2 limit 1000 delay 500ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo sysctl -w net.ipv4.tcp_congestion_control=reno
+net.ipv4.tcp_congestion_control = reno
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc netem 8008: root refcnt 2 limit 1000 delay 500ms
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc del dev lo root
+UserPath/labs-ebpf/tcp_atv_obs$ sudo sysctl -w net.ipv4.tcp_congestion_control=cubic
+net.ipv4.tcp_congestion_control = cubic
+UserPath/labs-ebpf/tcp_atv_obs$ sudo tc qdisc show dev lo
+qdisc noqueue 0: root refcnt 2 
+UserPath/labs-ebpf/tcp_atv_obs$ 

@@ -1,0 +1,156 @@
+UserPath/labs-ebpf/tcp_atv_obs$ iperf3 -s -p 5202
+-----------------------------------------------------------
+Server listening on 5202 (test #1)
+-----------------------------------------------------------
+Accepted connection from 186.219.91.26, port 45508
+[  5] local 186.219.91.26 port 5202 connected to 186.219.91.26 port 45510
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  5.92 GBytes  50.8 Gbits/sec                  
+[  5]   1.00-2.00   sec  5.88 GBytes  50.5 Gbits/sec                  
+[  5]   2.00-3.00   sec  5.93 GBytes  50.9 Gbits/sec                  
+[  5]   3.00-4.00   sec  6.00 GBytes  51.6 Gbits/sec                  
+[  5]   4.00-5.00   sec  5.89 GBytes  50.6 Gbits/sec                  
+[  5]   5.00-6.00   sec  5.98 GBytes  51.3 Gbits/sec                  
+[  5]   6.00-7.00   sec  5.91 GBytes  50.8 Gbits/sec                  
+[  5]   7.00-8.00   sec  5.96 GBytes  51.2 Gbits/sec                  
+[  5]   8.00-9.00   sec  5.90 GBytes  50.6 Gbits/sec                  
+[  5]   9.00-10.00  sec  5.88 GBytes  50.5 Gbits/sec                  
+[  5]  10.00-10.01  sec  1.12 MBytes  2.36 Gbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-10.01  sec  59.3 GBytes  50.9 Gbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5202 (test #2)
+-----------------------------------------------------------
+^Ciperf3: interrupt - the server has terminated
+UserPath/labs-ebpf/tcp_atv_obs$ iperf3 -s -p 5202
+-----------------------------------------------------------
+Server listening on 5202 (test #1)
+-----------------------------------------------------------
+Accepted connection from 186.219.91.26, port 46188
+[  5] local 186.219.91.26 port 5202 connected to 186.219.91.26 port 46196
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  5.48 GBytes  47.0 Gbits/sec                  
+[  5]   1.00-2.00   sec  6.05 GBytes  52.0 Gbits/sec                  
+[  5]   2.00-3.00   sec  6.03 GBytes  51.8 Gbits/sec                  
+[  5]   3.00-4.00   sec  6.07 GBytes  52.2 Gbits/sec                  
+[  5]   4.00-5.00   sec  6.15 GBytes  52.8 Gbits/sec                  
+[  5]   5.00-6.00   sec  5.57 GBytes  47.8 Gbits/sec                  
+[  5]   6.00-7.00   sec  5.97 GBytes  51.3 Gbits/sec                  
+[  5]   7.00-8.00   sec  6.17 GBytes  53.0 Gbits/sec                  
+[  5]   8.00-9.00   sec  5.61 GBytes  48.2 Gbits/sec                  
+[  5]   9.00-10.00  sec  6.17 GBytes  53.0 Gbits/sec                  
+[  5]  10.00-10.00  sec  2.25 MBytes  4.97 Gbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-10.00  sec  59.3 GBytes  50.9 Gbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5202 (test #2)
+-----------------------------------------------------------
+^Ciperf3: interrupt - the server has terminated
+UserPath/labs-ebpf/tcp_atv_obs$ iperf3 -s -p 5202
+-----------------------------------------------------------
+Server listening on 5202 (test #1)
+-----------------------------------------------------------
+Accepted connection from 186.219.91.26, port 45438
+[  5] local 186.219.91.26 port 5202 connected to 186.219.91.26 port 45444
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  6.50 GBytes  55.8 Gbits/sec                  
+[  5]   1.00-2.00   sec  6.40 GBytes  55.0 Gbits/sec                  
+[  5]   2.00-3.00   sec  5.82 GBytes  50.0 Gbits/sec                  
+[  5]   3.00-4.00   sec  5.72 GBytes  49.1 Gbits/sec                  
+[  5]   4.00-5.00   sec  5.06 GBytes  43.5 Gbits/sec                  
+[  5]   5.00-6.00   sec  5.44 GBytes  46.7 Gbits/sec                  
+[  5]   6.00-7.00   sec  5.30 GBytes  45.5 Gbits/sec                  
+[  5]   7.00-8.00   sec  5.75 GBytes  49.4 Gbits/sec                  
+[  5]   8.00-9.00   sec  5.73 GBytes  49.2 Gbits/sec                  
+[  5]   9.00-10.00  sec  6.09 GBytes  52.4 Gbits/sec                  
+[  5]  10.00-10.00  sec  5.62 MBytes  18.4 Gbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-10.00  sec  57.8 GBytes  49.7 Gbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5202 (test #2)
+-----------------------------------------------------------
+Accepted connection from 186.219.91.26, port 47136
+[  5] local 186.219.91.26 port 5202 connected to 186.219.91.26 port 47152
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  6.79 GBytes  58.2 Gbits/sec                  
+[  5]   1.00-2.00   sec  6.89 GBytes  59.2 Gbits/sec                  
+[  5]   2.00-3.00   sec  6.94 GBytes  59.6 Gbits/sec                  
+[  5]   3.00-4.00   sec  6.85 GBytes  58.8 Gbits/sec                  
+[  5]   4.00-5.00   sec  6.84 GBytes  58.8 Gbits/sec                  
+[  5]   5.00-6.00   sec  6.87 GBytes  59.0 Gbits/sec                  
+[  5]   6.00-7.00   sec  6.61 GBytes  56.8 Gbits/sec                  
+[  5]   7.00-8.00   sec  6.93 GBytes  59.6 Gbits/sec                  
+[  5]   8.00-9.00   sec  6.90 GBytes  59.3 Gbits/sec                  
+[  5]   9.00-10.00  sec  6.92 GBytes  59.4 Gbits/sec                  
+[  5]  10.00-11.00  sec  6.85 GBytes  58.8 Gbits/sec                  
+[  5]  11.00-12.00  sec  6.80 GBytes  58.4 Gbits/sec                  
+[  5]  12.00-13.00  sec  6.84 GBytes  58.8 Gbits/sec                  
+[  5]  13.00-14.00  sec  6.73 GBytes  57.8 Gbits/sec                  
+[  5]  14.00-15.00  sec  6.94 GBytes  59.5 Gbits/sec                  
+[  5]  15.00-16.00  sec  6.93 GBytes  59.6 Gbits/sec                  
+[  5]  16.00-17.00  sec  6.86 GBytes  59.0 Gbits/sec                  
+[  5]  17.00-18.00  sec  6.76 GBytes  58.1 Gbits/sec                  
+[  5]  18.00-19.00  sec  6.88 GBytes  59.1 Gbits/sec                  
+[  5]  19.00-20.00  sec  6.91 GBytes  59.4 Gbits/sec                  
+[  5]  20.00-21.00  sec  6.67 GBytes  57.3 Gbits/sec                  
+[  5]  21.00-22.00  sec  6.96 GBytes  59.8 Gbits/sec                  
+[  5]  22.00-23.00  sec  6.84 GBytes  58.7 Gbits/sec                  
+[  5]  23.00-24.00  sec  6.94 GBytes  59.6 Gbits/sec                  
+[  5]  24.00-25.00  sec  6.90 GBytes  59.3 Gbits/sec                  
+[  5]  25.00-26.00  sec  6.86 GBytes  58.9 Gbits/sec                  
+[  5]  26.00-27.00  sec  6.65 GBytes  57.1 Gbits/sec                  
+[  5]  27.00-28.00  sec  6.81 GBytes  58.5 Gbits/sec                  
+[  5]  28.00-29.00  sec  6.91 GBytes  59.3 Gbits/sec                  
+[  5]  29.00-30.00  sec  6.81 GBytes  58.6 Gbits/sec                  
+[  5]  30.00-30.00  sec  7.75 MBytes  66.2 Gbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-30.00  sec   205 GBytes  58.8 Gbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5202 (test #3)
+-----------------------------------------------------------
+Accepted connection from 186.219.91.26, port 48704
+[  5] local 186.219.91.26 port 5202 connected to 186.219.91.26 port 48706
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  6.60 GBytes  56.7 Gbits/sec                  
+[  5]   1.00-2.00   sec  6.50 GBytes  55.8 Gbits/sec                  
+[  5]   2.00-3.00   sec  6.54 GBytes  56.2 Gbits/sec                  
+[  5]   3.00-4.00   sec  6.47 GBytes  55.6 Gbits/sec                  
+[  5]   4.00-5.00   sec  6.36 GBytes  54.6 Gbits/sec                  
+[  5]   5.00-6.00   sec  6.69 GBytes  57.5 Gbits/sec                  
+[  5]   6.00-7.00   sec  6.26 GBytes  53.8 Gbits/sec                  
+[  5]   7.00-8.00   sec  6.52 GBytes  56.0 Gbits/sec                  
+[  5]   8.00-9.00   sec  6.35 GBytes  54.5 Gbits/sec                  
+[  5]   9.00-10.00  sec  6.31 GBytes  54.2 Gbits/sec                  
+[  5]  10.00-11.00  sec  6.50 GBytes  55.8 Gbits/sec                  
+[  5]  11.00-12.00  sec  6.35 GBytes  54.6 Gbits/sec                  
+[  5]  12.00-13.00  sec  6.48 GBytes  55.7 Gbits/sec                  
+[  5]  13.00-14.00  sec  5.96 GBytes  51.2 Gbits/sec                  
+[  5]  14.00-15.00  sec  6.18 GBytes  53.1 Gbits/sec                  
+[  5]  15.00-16.00  sec  6.45 GBytes  55.4 Gbits/sec                  
+[  5]  16.00-17.00  sec  5.36 GBytes  46.1 Gbits/sec                  
+[  5]  17.00-18.00  sec  5.54 GBytes  47.6 Gbits/sec                  
+[  5]  18.00-19.00  sec  6.16 GBytes  52.9 Gbits/sec                  
+[  5]  19.00-20.00  sec  6.42 GBytes  55.2 Gbits/sec                  
+[  5]  20.00-21.00  sec  6.46 GBytes  55.5 Gbits/sec                  
+[  5]  21.00-22.00  sec  6.24 GBytes  53.6 Gbits/sec                  
+[  5]  22.00-23.00  sec  6.65 GBytes  57.1 Gbits/sec                  
+[  5]  23.00-24.00  sec  6.55 GBytes  56.2 Gbits/sec                  
+[  5]  24.00-25.00  sec  6.69 GBytes  57.5 Gbits/sec                  
+[  5]  25.00-26.00  sec  6.65 GBytes  57.1 Gbits/sec                  
+[  5]  26.00-27.00  sec  6.78 GBytes  58.2 Gbits/sec                  
+[  5]  27.00-28.00  sec  5.94 GBytes  51.1 Gbits/sec                  
+[  5]  28.00-29.00  sec  5.96 GBytes  51.2 Gbits/sec                  
+[  5]  29.00-30.00  sec  5.92 GBytes  50.8 Gbits/sec                  
+[  5]  30.00-30.00  sec   384 KBytes   918 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-30.00  sec   190 GBytes  54.4 Gbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5202 (test #4)
+-----------------------------------------------------------
+^Ciperf3: interrupt - the server has terminated
+UserPath/labs-ebpf/tcp_atv_obs$ 

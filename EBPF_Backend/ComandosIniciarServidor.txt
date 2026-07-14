@@ -1,0 +1,6 @@
+clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+sudo mount -t bpf none /sys/fs/bpf
+sudo bpftool prog loadall tcp_co_kernel.o /sys/fs/bpf/tcp_obs autoattach
+// sudo bpftool prog load tcp_co_kernel.o /sys/fs/bpf/tcp_obs
+sudo bpftool map dump name tcp_metrics_map
+Rodar Antes o Comando: sudo rm -rf /sys/fs/bpf/tcp_obs

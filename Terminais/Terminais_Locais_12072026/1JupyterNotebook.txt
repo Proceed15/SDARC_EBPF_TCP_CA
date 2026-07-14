@@ -1,0 +1,116 @@
+UserPath/UserEnds$ source venv/bin/activate
+(venv) UserPath/UserEnds$ jupyter notebook
+[I 2026-07-11 23:11:14.320 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2026-07-11 23:11:14.323 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2026-07-11 23:11:14.327 ServerApp] jupyterlab | extension was successfully linked.
+[I 2026-07-11 23:11:14.332 ServerApp] notebook | extension was successfully linked.
+[I 2026-07-11 23:11:14.851 ServerApp] notebook_shim | extension was successfully linked.
+[I 2026-07-11 23:11:14.888 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2026-07-11 23:11:14.890 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2026-07-11 23:11:14.891 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2026-07-11 23:11:14.895 LabApp] JupyterLab extension loaded from /home/jrlsf/UserEnds/venv/lib/python3.12/site-packages/jupyterlab
+[I 2026-07-11 23:11:14.895 LabApp] JupyterLab application directory is /home/jrlsf/UserEnds/venv/share/jupyter/lab
+[I 2026-07-11 23:11:14.896 LabApp] Extension Manager is 'pypi'.
+[I 2026-07-11 23:11:14.973 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2026-07-11 23:11:14.975 ServerApp] notebook | extension was successfully loaded.
+[I 2026-07-11 23:11:14.980 ServerApp] Serving notebooks from local directory: /home/jrlsf/UserEnds
+[I 2026-07-11 23:11:14.980 ServerApp] Jupyter Server 2.20.0 is running at:
+[I 2026-07-11 23:11:14.980 ServerApp] http://localhost:8888/tree
+[I 2026-07-11 23:11:14.980 ServerApp]     http://127.0.0.1:8888/tree
+[I 2026-07-11 23:11:14.980 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+gio: file:///home/jrlsf/.local/share/jupyter/runtime/jpserver-1739-open.html: Failed to find default application for content type ‘text/html’
+[I 2026-07-11 23:11:18.015 ServerApp] Skipped non-installed server(s): basedpyright, bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyrefly, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[I 2026-07-11 23:19:38.912 JupyterNotebookApp] 302 GET /tree (@127.0.0.1) 1.86ms
+[W 2026-07-11 23:20:50.676 ServerApp] 401 POST /login?next=%2Ftree (@127.0.0.1) 115.53ms referer=http://127.0.0.1:8888/login?next=%2Ftree
+[W 2026-07-11 23:23:12.438 ServerApp] 401 POST /login?next=%2Ftree (@127.0.0.1) 68.79ms referer=http://127.0.0.1:8888/login?next=%2Ftree
+[W 2026-07-11 23:23:20.914 ServerApp] 401 POST /login?next=%2Ftree (@127.0.0.1) 71.04ms referer=http://127.0.0.1:8888/login?next=%2Ftree
+[W 2026-07-11 23:29:36.855 ServerApp] 401 POST /login?next=%2Ftree (@127.0.0.1) 68.67ms referer=http://127.0.0.1:8888/login?next=%2Ftree
+[I 2026-07-11 23:32:59.985 JupyterNotebookApp] 302 GET /tree (@127.0.0.1) 2.17ms
+^C[I 2026-07-11 23:33:27.025 ServerApp] interrupted
+[I 2026-07-11 23:33:27.025 ServerApp] Serving notebooks from local directory: /home/jrlsf/UserEnds
+    0 active kernels
+    Jupyter Server 2.20.0 is running at:
+    http://localhost:8888/tree
+        http://127.0.0.1:8888/tree
+Shut down this Jupyter server (y/[n])? Y
+[C 2026-07-11 23:33:32.272 ServerApp] Shutdown confirmed
+[I 2026-07-11 23:33:32.279 ServerApp] Shutting down 5 extensions
+(venv) UserPath/UserEnds$ Jupyter Notebook Password
+Command 'Jupyter' not found, did you mean:
+  command 'jupyter' from deb jupyter-core (5.3.2-1)
+Try: sudo apt install <deb name>
+(venv) UserPath/UserEnds$ jupyter notebook password
+Enter password: 
+Verify password: 
+[JupyterPasswordApp] Wrote hashed password to /home/jrlsf/.jupyter/jupyter_server_config.json
+(venv) UserPath/UserEnds$ jupyter notebook
+[I 2026-07-11 23:34:27.683 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2026-07-11 23:34:27.688 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2026-07-11 23:34:27.694 ServerApp] jupyterlab | extension was successfully linked.
+[I 2026-07-11 23:34:27.699 ServerApp] notebook | extension was successfully linked.
+[I 2026-07-11 23:34:28.241 ServerApp] notebook_shim | extension was successfully linked.
+[I 2026-07-11 23:34:28.267 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2026-07-11 23:34:28.271 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2026-07-11 23:34:28.272 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2026-07-11 23:34:28.275 LabApp] JupyterLab extension loaded from /home/jrlsf/UserEnds/venv/lib/python3.12/site-packages/jupyterlab
+[I 2026-07-11 23:34:28.275 LabApp] JupyterLab application directory is /home/jrlsf/UserEnds/venv/share/jupyter/lab
+[I 2026-07-11 23:34:28.276 LabApp] Extension Manager is 'pypi'.
+[I 2026-07-11 23:34:28.353 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2026-07-11 23:34:28.356 ServerApp] notebook | extension was successfully loaded.
+[I 2026-07-11 23:34:28.358 ServerApp] Serving notebooks from local directory: /home/jrlsf/UserEnds
+[I 2026-07-11 23:34:28.358 ServerApp] Jupyter Server 2.20.0 is running at:
+[I 2026-07-11 23:34:28.358 ServerApp] http://localhost:8888/tree
+[I 2026-07-11 23:34:28.358 ServerApp]     http://127.0.0.1:8888/tree
+[I 2026-07-11 23:34:28.358 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+gio: file:///home/jrlsf/.local/share/jupyter/runtime/jpserver-8219-open.html: Failed to find default application for content type ‘text/html’
+[I 2026-07-11 23:34:31.218 ServerApp] Skipped non-installed server(s): basedpyright, bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyrefly, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[I 2026-07-11 23:35:10.569 ServerApp] User 7f555a86c9134c148f652de9c9fa6fe1 logged in.
+[I 2026-07-11 23:35:10.570 ServerApp] 302 POST /login?next=%2Ftree (7f555a86c9134c148f652de9c9fa6fe1@127.0.0.1) 85.09ms
+[W 2026-07-11 23:35:21.596 ServerApp] Notebook Analise_TCP.ipynb is not trusted
+[W 2026-07-11 23:35:22.814 ServerApp] Notebook Analise_TCP.ipynb is not trusted
+[I 2026-07-11 23:35:23.258 ServerApp] Kernel started: 02b42677-8498-4d8d-93ac-d79c97998ba6
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[I 2026-07-11 23:35:24.452 ServerApp] Adapting from protocol version 5.3 (kernel 02b42677-8498-4d8d-93ac-d79c97998ba6) to 5.4 (client).
+[I 2026-07-11 23:35:24.453 ServerApp] Connecting to kernel 02b42677-8498-4d8d-93ac-d79c97998ba6.
+[W 2026-07-11 23:35:24.455 ServerApp] The websocket_ping_timeout (90000) cannot be longer than the websocket_ping_interval (30000).
+    Setting websocket_ping_timeout=30000
+[I 2026-07-11 23:35:24.465 ServerApp] Adapting from protocol version 5.3 (kernel 02b42677-8498-4d8d-93ac-d79c97998ba6) to 5.4 (client).
+[I 2026-07-11 23:35:24.466 ServerApp] Connecting to kernel 02b42677-8498-4d8d-93ac-d79c97998ba6.
+[I 2026-07-11 23:35:24.488 ServerApp] Adapting from protocol version 5.3 (kernel 02b42677-8498-4d8d-93ac-d79c97998ba6) to 5.4 (client).
+[I 2026-07-11 23:35:24.490 ServerApp] Connecting to kernel 02b42677-8498-4d8d-93ac-d79c97998ba6.
+[I 2026-07-11 23:35:24.512 ServerApp] Adapting from protocol version 5.3 (kernel 02b42677-8498-4d8d-93ac-d79c97998ba6) to 5.4 (client).
+[I 2026-07-11 23:35:24.516 ServerApp] Connecting to kernel 02b42677-8498-4d8d-93ac-d79c97998ba6.
+[W 2026-07-11 23:35:35.493 ServerApp] Notebook Analise_TCP.ipynb is not trusted
+[I 2026-07-11 23:45:24.669 ServerApp] Saving file at /Analise_TCP.ipynb
+[W 2026-07-11 23:45:24.669 ServerApp] Notebook Analise_TCP.ipynb is not trusted
+[I 2026-07-11 23:45:48.876 ServerApp] Saving file at /Analise_TCP.ipynb
+[W 2026-07-11 23:45:48.876 ServerApp] Notebook Analise_TCP.ipynb is not trusted
+[I 2026-07-11 23:47:50.878 ServerApp] Saving file at /Analise_TCP.ipynb
+[W 2026-07-11 23:47:50.878 ServerApp] Notebook Analise_TCP.ipynb is not trusted
+[I 2026-07-11 23:55:24.774 ServerApp] Kernel interrupted: 02b42677-8498-4d8d-93ac-d79c97998ba6
+[I 2026-07-11 23:55:51.565 ServerApp] Saving file at /Analise_TCP.ipynb
+[W 2026-07-11 23:55:51.566 ServerApp] Notebook Analise_TCP.ipynb is not trusted
+[I 2026-07-11 23:57:54.257 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 00:24:59.428 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 00:29:00.145 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 00:30:59.783 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 00:56:01.137 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 00:57:59.956 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 00:59:59.019 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 01:02:00.970 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 01:04:00.413 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 01:08:02.242 ServerApp] Saving file at /Analise_TCP.ipynb
+[I 2026-07-12 01:10:01.128 ServerApp] Saving file at /Analise_TCP.ipynb
+^C[I 2026-07-12 01:11:19.438 ServerApp] interrupted
+[I 2026-07-12 01:11:19.445 ServerApp] Serving notebooks from local directory: /home/jrlsf/UserEnds
+    1 active kernel
+    Jupyter Server 2.20.0 is running at:
+    http://localhost:8888/tree
+        http://127.0.0.1:8888/tree
+Shut down this Jupyter server (y/[n])? Y
+[C 2026-07-12 01:11:21.826 ServerApp] Shutdown confirmed
+[I 2026-07-12 01:11:21.843 ServerApp] Shutting down 5 extensions
+[I 2026-07-12 01:11:21.848 ServerApp] Shutting down 1 kernel
+[I 2026-07-12 01:11:21.854 ServerApp] Kernel shutdown: 02b42677-8498-4d8d-93ac-d79c97998ba6
+
+(venv) UserPath/UserEnds$ 

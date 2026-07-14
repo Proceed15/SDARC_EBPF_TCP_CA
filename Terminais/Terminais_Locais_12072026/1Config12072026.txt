@@ -1,0 +1,116 @@
+UserPath/labs-ebpf/tcp_atv_obs$ sudo rm -rf /sys/fs/bpf/tcp_obs
+[sudo] password for jrlsf: 
+UserPath/labs-ebpf/tcp_atv_obs$ clang -O2 -g -target bpf -D__TARGET_ARCH_x86 -c tcp_co_kernel.c -o tcp_co_kernel.o
+UserPath/labs-ebpf/tcp_atv_obs$ sudo mount -t bpf none /sys/fs/bpf
+UserPath/labs-ebpf/tcp_atv_obs$ sudo bpftool prog loadall tcp_co_kernel.o /sys/fs/bpf/tcp_obs autoattach
+UserPath/labs-ebpf/tcp_atv_obs$ hostname -I
+MeuIPL 2804:7f0:6882:2988:b2d7:e40d:fd1c:9511 2804:7f0:6882:2988:942a:ee99:5717:6cd9 
+UserPath/labs-ebpf/tcp_atv_obs$  sudo bpftool map dump name tcp_metrics_map
+[{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 46816,
+            "dst_port": 46325
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 279,
+            "srtt": 6095,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 17664320,
+            "ca_state": 0,
+            "packets_out": 1,
+            "retrans_out": 0,
+            "sndbuf": 2498048,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 46325,
+            "dst_port": 46812
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 501,
+            "srtt": 6950,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 23695304,
+            "ca_state": 0,
+            "packets_out": 1,
+            "retrans_out": 0,
+            "sndbuf": 3864576,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 46325,
+            "dst_port": 46816
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 156,
+            "srtt": 14178,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 8042120,
+            "ca_state": 0,
+            "packets_out": 1,
+            "retrans_out": 0,
+            "sndbuf": 652800,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 51357888,
+            "dst_ip": 711895958,
+            "src_port": 46014,
+            "dst_port": 443
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 625596,
+            "retransmissions": 0,
+            "duplicate_acks": 0,
+            "bytes_acked": 2810,
+            "ca_state": 0,
+            "packets_out": 1,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 4,
+            "ca_name": "cubic"
+        }
+    },{
+        "key": {
+            "src_ip": 16777343,
+            "dst_ip": 16777343,
+            "src_port": 46812,
+            "dst_port": 46325
+        },
+        "value": {
+            "snd_cwnd": 10,
+            "ssthresh": 2147483647,
+            "srtt": 7316,
+            "retransmissions": 1,
+            "duplicate_acks": 0,
+            "bytes_acked": 282161,
+            "ca_state": 0,
+            "packets_out": 0,
+            "retrans_out": 0,
+            "sndbuf": 87040,
+            "sk_state": 1,
+            "ca_name": "cubic"
+        }
+    }
+]
+UserPath/labs-ebpf/tcp_atv_obs$ 
